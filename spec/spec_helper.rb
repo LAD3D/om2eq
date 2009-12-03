@@ -12,7 +12,7 @@ shared_examples_for "PointOrderedSet" do
   
   it "should fail if key is out of bounds" do
     lambda{ @set[10000]="anything"}.should raise_error KeyOutOfBoundsError
-    lambda{ @set[@set.class.instance_variable_get("@limit")]="anything"}.should raise_error KeyOutOfBoundsError
+    lambda{ @set[@set.class.limit]="anything"}.should raise_error KeyOutOfBoundsError
     lambda{ @set[-1]="anything"}.should raise_error KeyOutOfBoundsError
   end
   
