@@ -8,8 +8,8 @@ begin
     gem.summary = %Q{Traductor de OM a formato más usable.}
     gem.description = %Q{TODO: longer description of your gem}
     gem.email = "serabe@gmail.com"
-    gem.homepage = "http://github.com/serabe/om2ec"
     gem.authors = ["Sergio Arbeo"]
+    gem.add_dependency "nokogiri", ">= 1.4"
     gem.add_development_dependency "rspec", ">= 1.2.9"
     gem.add_development_dependency "cucumber", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
