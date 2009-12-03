@@ -1,18 +1,18 @@
-class Circle
+class Sphere
   
   include PointOrderedSet
   
-  @limit = 2
+  @limit=2
   
   def initialize
     @set=[]
   end
   
-  def circle_center
+  def sphere_center
     @set[0]
   end
   
-  def circle_center=(other_point)
+  def sphere_center=(other_point)
     self[0]=other_point
   end
   

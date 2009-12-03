@@ -1,8 +1,9 @@
 class Line
   include PointOrderedSet
   
+  @limit = 2
+  
   def initialize
-    @limit = 2
     @set = []
   end
   

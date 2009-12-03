@@ -1,10 +1,10 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe Line do
+describe Sphere do
   
   it_should_behave_like "PointOrderedSet"
   
   before(:each) do
-    @set = Line.new
+    @set = Sphere.new
   end
 end
