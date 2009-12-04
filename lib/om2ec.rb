@@ -2,6 +2,7 @@
   point_ordered_set
   circle
   line
+  plane
   point
   sphere
   }.each do |file|
