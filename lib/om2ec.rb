@@ -1,10 +1,27 @@
 %w{
-  point_ordered_set
-  circle
   line
   plane
   point
-  sphere
   }.each do |file|
     require File.join('om2ec',file+'.rb')
+  end
+
+%w{
+  symbolic_point
+  affine_point
+  circle
+  configuration
+  intersection_point
+  midpoint
+  normal_line
+  normal_plane
+  parallel_line
+  parallel_plane
+  perpendicular_line
+  point_osn_line
+  segment
+  sphere
+  }.each do |file|
+    require File.join('om2ec', 'constructions', file+'rb')
+  end
   end

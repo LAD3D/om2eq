@@ -1,0 +1,3 @@
+class ParallelLine < Line
+  
+end

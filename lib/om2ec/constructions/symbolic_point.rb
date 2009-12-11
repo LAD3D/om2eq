@@ -1,0 +1,3 @@
+class SymbolicPoint < Point
+  
+end

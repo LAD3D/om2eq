@@ -1,0 +1,3 @@
+class IntersectionPoint < SymbolicPoint
+  
+end

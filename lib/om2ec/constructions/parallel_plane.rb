@@ -1,0 +1,3 @@
+class ParallelPlane < Plane
+  
+end

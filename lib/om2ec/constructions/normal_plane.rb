@@ -1,0 +1,3 @@
+class NormalPlane < Plane
+  
+end
