@@ -29,3 +29,10 @@ shared_examples_for "a free point" do
     @set.should be_free
   end
 end
+
+shared_examples_for "an identified object" do
+
+  it "should have an id" do
+    @set.variable_id.should_not be_nil
+  end
+end

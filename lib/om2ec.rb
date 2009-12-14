@@ -24,3 +24,9 @@
   }.each do |file|
     require File.join('om2ec', 'constructions', file+'.rb')
   end
+
+%w{
+  number_generator
+  }.each do |file|
+    require File.join('om2ec','helpers', file+'.rb')
+  end
