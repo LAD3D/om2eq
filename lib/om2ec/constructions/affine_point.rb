@@ -1,10 +1,10 @@
 class AffinePoint < Point
 
-  attr_accessor :x, :y, :z
+  attr_accessor :aff_x, :aff_y, :aff_z
 
   def initialize(x=0, y=0, z=0)
     super()
-    @x, @y, @z = x, y, z
+    @aff_x, @aff_y, @aff_z = x, y, z
   end
 
   def free?
@@ -13,8 +13,8 @@ class AffinePoint < Point
 
   def ==(other_point)
     other_point.is_a?(AffinePoint) &&
-      other_point.x == self.x &&
-      other_point.y == self.y &&
-      other_point.z == self.z
+      other_point.aff_x == self.aff_x &&
+      other_point.aff_y == self.aff_y &&
+      other_point.aff_z == self.aff_z
   end
 end
