@@ -18,10 +18,9 @@
   parallel_line
   parallel_plane
   perpendicular_line
-  point_osn_line
+  point_on_line
   segment
   sphere
   }.each do |file|
-    require File.join('om2ec', 'constructions', file+'rb')
-  end
+    require File.join('om2ec', 'constructions', file+'.rb')
   end

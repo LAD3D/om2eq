@@ -8,20 +8,24 @@ Spec::Runner.configure do |config|
   
 end
 
-shared_examples_for "PointOrderedSet" do
+shared_examples_for "a bound point" do
   
-  it "should fail if key is out of bounds" do
-    lambda{ @set[10000]="anything"}.should raise_error KeyOutOfBoundsError
-    lambda{ @set[@set.class.limit]="anything"}.should raise_error KeyOutOfBoundsError
-    lambda{ @set[-1]="anything"}.should raise_error KeyOutOfBoundsError
+  it "should be bound" do
+    @set.should be_bound
   end
   
-  it "should fail if value is not a Point" do
-    lambda{ @set[0]="anything"}.should raise_error ParamIsNotPointError
+  it "should not be free" do
+    @set.should_not be_free
   end
-  
-  it "should not raise an error if value is a Point" do
-    lambda{ @set[0]=Point.new}.should_not raise_error
-    lambda{ @set[0]=Class.new(Point).new}.should_not raise_error
+end
+
+shared_examples_for "a free point" do
+
+  it "should not be bound" do
+    @set.should_not be_bound
+  end
+
+  it "should be free" do
+    @set.should be_free
   end
 end
