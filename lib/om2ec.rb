@@ -1,4 +1,14 @@
 %w{
+  number_generator
+  array
+  }.each do |file|
+    require File.join('om2ec','helpers', file+'.rb')
+  end
+
+require File.join('om2ec', 'definable', 'definition.rb')
+
+%w{
+  definable
   line
   plane
   point
@@ -23,10 +33,4 @@
   sphere
   }.each do |file|
     require File.join('om2ec', 'constructions', file+'.rb')
-  end
-
-%w{
-  number_generator
-  }.each do |file|
-    require File.join('om2ec','helpers', file+'.rb')
   end
