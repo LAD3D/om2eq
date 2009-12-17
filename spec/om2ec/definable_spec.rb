@@ -10,5 +10,9 @@ describe Definable do
   it "should extend Definable::ClassMethods when including Definable" do
     (class << @class; self; end).should include(Definable::ClassMethods)
   end
+
+  it "should have an independent set of definitions" do
+    @definable.instance_variable_get("@definitions").should_not be_nil
+  end
 end
 
