@@ -8,9 +8,7 @@ module Definable
       end
 
       def add(object)
-        unless complete?
-          add_object(object)
-        end
+        add_object(object) unless complete?
       end
 
       def complete?
