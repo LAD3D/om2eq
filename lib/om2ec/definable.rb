@@ -4,10 +4,15 @@ module Definable
     base.extend ClassMethods
     base.instance_eval do
       alias_method :initialize_without_definition, :initialize
+      alias_method :add_object_not_definable, :add_object if method_defined? :add_object
 
       define_method :initialize do
         initialize_without_definition
-         @definitions = self.class.definitions
+        @definitions = self.class.definitions
+      end
+
+      define_method :add_object do |obj|
+        @definitions.each{|definition| definition.add(obj)}
       end
     end
   end
@@ -15,7 +20,7 @@ module Definable
   module ClassMethods
 
     def definition(args)
-      a = args.key.detect{|x| x.is_a? Array && x.all?{|y| y.is_a? Class}}
+      a = args.keys.detect{|x| x.is_a?(Array) && x.all?{|y| y.is_a?(Class)}}
       b = args[a]
       self.add_definition(Definition.new(a,b))
     end
