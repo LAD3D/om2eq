@@ -9,16 +9,21 @@ module Definable
 
       def add(object)
         unless complete?
-          if @args_klazz.include? object.class
-            @args << object
-            @args_klazz.delete_first object.class
-            object
-          end
+          add_object(object)
         end
       end
 
       def complete?
         @args_klazz.empty?
+      end
+
+      private
+      def add_object(object)
+        if @args_klazz.include? object.class
+          @args << object
+          @args_klazz.delete_first object.class
+          object
+        end
       end
     end
   end

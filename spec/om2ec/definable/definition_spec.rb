@@ -26,6 +26,12 @@ module Definable
         @definition.should_receive(:complete?).and_return(false)
         @definition.add Point.new
       end
+
+      it "should not call add_object if definition is complete" do
+        @definition.should_receive(:complete?).and_return(true)
+        @definition.should_not_receive(:add_object)
+        @definition.add Point.new
+      end
     end
   end
 end

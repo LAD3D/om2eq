@@ -5,6 +5,11 @@ describe Definable do
     @class = Class.new
     @class.send :include, Definable
     @definable = @class.new
+    [@class, @definable].each do |var|
+      def var.definitions
+        self.instance_variable_get("@definitions")
+      end
+    end
   end
 
   it "should extend Definable::ClassMethods when including Definable" do
@@ -12,7 +17,8 @@ describe Definable do
   end
 
   it "should have an independent set of definitions" do
-    @definable.instance_variable_get("@definitions").should_not be_nil
+    @definable.definitions.should_not be_nil
+    @definable.definitions.should_not be_equal(@class.definitions)
   end
 end
 
