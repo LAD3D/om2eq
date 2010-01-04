@@ -8,7 +8,7 @@ module Definable
 
       define_method :initialize do
         initialize_without_definition
-        @definitions = self.class.definitions
+        @definitions = self.class.definitions(self)
       end
 
       define_method :add_object do |obj|
@@ -16,6 +16,10 @@ module Definable
       end
     end
   end
+
+		def completed_by(definition)
+				@proper_definition = definition unless @proper_definition
+		end
 
   module ClassMethods
 
@@ -32,9 +36,9 @@ module Definable
       end
     end
 
-    def definitions
+    def definitions(obj)
       @definitions ||= []
-      @definitions.dup
+      @definitions.dup.each {|d| d.for_object(obj)}
     end
   end
 end

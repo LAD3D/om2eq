@@ -5,6 +5,7 @@ describe Definable do
     @class = Class.new
     @class.send :include, Definable
     @class.definition [Point, Point] => Midpoint
+				@class.definition [Point, Line] => Line
     @definable = @class.new
     [@class, @definable].each do |var|
       def var.definitions
@@ -38,5 +39,11 @@ describe Definable do
     @definable.definitions.each{|d| d.should_receive(:add).with(point)}
     @definable.add_object point
   end
+
+		it "should call completed_by when one definition gets complete" do
+				@definable.should_receive(:completed_by).with(@definable.definitions[0])
+				@definable.add_object Point.new
+				@definable.add_object AffinePoint.new(0,10,20)
+		end
 end
 
