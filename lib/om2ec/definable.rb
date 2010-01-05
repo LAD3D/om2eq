@@ -12,10 +12,21 @@ module Definable
       end
 
       define_method :add_object do |obj|
-        @definitions.each{|definition| definition.add(obj)}
+        if @definitions.map{|definition| definition.add(obj)}.any?{|x| !x.nil? }
+										object_dependencies << obj
+										obj.dependant_objects << self
+								end
       end
     end
   end
+
+		def object_dependencies
+				@object_dependencies ||= []
+		end
+
+		def dependant_objects
+				@dependant_object ||= []
+		end
 
 		def completed_by(definition)
 				@proper_definition = definition unless @proper_definition

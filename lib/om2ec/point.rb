@@ -9,4 +9,6 @@ class Point
   def bound?
     !free?
   end
+
+		include Definable
 end
