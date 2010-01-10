@@ -10,15 +10,15 @@ module Definable
         initialize_without_definition
         @definitions = self.class.definitions(self)
       end
-
-      define_method :add_object do |obj|
-        if @definitions.map{|definition| definition.add(obj)}.any?{|x| !x.nil? }
-										object_dependencies << obj
-										obj.dependant_objects << self
-								end
-      end
     end
   end
+
+		def add_object obj
+				if @definitions.map{|definition| definition.add(obj)}.any?{|x| !x.nil? }
+						object_dependencies << obj
+						obj.dependant_objects << self
+				end
+		end
 
 		def object_dependencies
 				@object_dependencies ||= []
@@ -35,9 +35,9 @@ module Definable
   module ClassMethods
 
     def definition(args)
-      a = args.keys.detect{|x| x.is_a?(Array) && x.all?{|y| y.is_a?(Class)}}
-      b = args[a]
-      self.add_definition(Definition.new(a,b))
+      arguments = args.keys.detect{|x| x.is_a?(Array) && x.all?{|y| y.is_a?(Class)}}
+      target = args[arguments]
+      self.add_definition(Definition.new(arguments,target))
     end
 
     def add_definition(definition)
