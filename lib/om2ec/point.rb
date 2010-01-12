@@ -4,7 +4,7 @@ class Point
 
   def initialize(numbered=true)
 				if numbered
-						@variable_id = NumberGenerator.instance.succ
+						@variable_id = NumberGenerator.succ
 				end
   end
 

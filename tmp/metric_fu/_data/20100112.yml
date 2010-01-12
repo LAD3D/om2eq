@@ -10,20 +10,20 @@
   - :lines: 11
     :name: Definable#self.included
     :complexity: 4
+  - :lines: 4
+    :name: Definable::ClassMethods#definition
+    :complexity: 3
   - :lines: 6
     :name: Array#delete_first
     :complexity: 3
   - :lines: 4
-    :name: Definable::ClassMethods#definition
-    :complexity: 3
-  - :lines: 2
-    :name: Definable#completed_by
-    :complexity: 2
-  - :lines: 2
-    :name: Point#x
+    :name: Point#initialize
     :complexity: 2
   - :lines: 2
     :name: Point#z
+    :complexity: 2
+  - :lines: 2
+    :name: Definable#completed_by
     :complexity: 2
   - :lines: 2
     :name: Point#y
@@ -35,22 +35,22 @@
     :name: Definable::ClassMethods#definitions
     :complexity: 2
   - :lines: 2
-    :name: Definable::ClassMethods::Definition#add
+    :name: Point#x
     :complexity: 2
-  - :lines: 4
-    :name: Point#initialize
+  - :lines: 2
+    :name: Definable::ClassMethods::Definition#add
     :complexity: 2
   - :lines: 3
     :name: Definable::ClassMethods::Definition#initialize
+    :complexity: 1
+  - :lines: 3
+    :name: Definable::ClassMethods::Definition#for_object
     :complexity: 1
   - :lines: 2
     :name: Definable::ClassMethods::Definition#complete?
     :complexity: 1
   - :lines: 2
     :name: NumberGenerator#initialize
-    :complexity: 1
-  - :lines: 3
-    :name: Definable::ClassMethods::Definition#for_object
     :complexity: 1
   - :lines: 2
     :name: NumberGenerator#succ
@@ -62,28 +62,22 @@
     :name: AffinePoint#initialize
     :complexity: 1
   - :lines: 2
-    :name: AffinePoint#free?
-    :complexity: 1
-  - :lines: 2
     :name: Definable#dependant_objects
     :complexity: 1
   - :lines: 2
     :name: Definable#object_dependencies
     :complexity: 1
+  - :lines: 2
+    :name: AffinePoint#free?
+    :complexity: 1
   - :lines: 5
     :name: AffinePoint#==
-    :complexity: 1
-  - :lines: 2
-    :name: SymbolicPoint#initialize
     :complexity: 1
   - :lines: 2
     :name: Point#to
     :complexity: 1
   - :lines: 2
     :name: Point#to_vector
-    :complexity: 1
-  - :lines: 2
-    :name: SymbolicPoint#free?
     :complexity: 1
   - :lines: 5
     :name: Line#normal_vector
@@ -92,13 +86,16 @@
     :name: Line#vector
     :complexity: 1
   - :lines: 2
+    :name: Configuration#initialize
+    :complexity: 1
+  - :lines: 2
     :name: Point#free?
     :complexity: 1
   - :lines: 2
     :name: Point#bound?
     :complexity: 1
   - :lines: 2
-    :name: Configuration#initialize
+    :name: SymbolicPoint#free?
     :complexity: 1
   :classes: 
   - :lines: 45
@@ -213,16 +210,6 @@
       :complexity: 3
     :name: Array
     :complexity: 3
-  - :lines: 9
-    :defs: 
-    - :lines: 2
-      :name: SymbolicPoint#initialize
-      :complexity: 1
-    - :lines: 2
-      :name: SymbolicPoint#free?
-      :complexity: 1
-    :name: SymbolicPoint
-    :complexity: 2
   - :lines: 14
     :defs: 
     - :lines: 5
@@ -239,6 +226,13 @@
       :name: Configuration#initialize
       :complexity: 1
     :name: Configuration
+    :complexity: 1
+  - :lines: 5
+    :defs: 
+    - :lines: 2
+      :name: SymbolicPoint#free?
+      :complexity: 1
+    :name: SymbolicPoint
     :complexity: 1
   - :lines: 2
     :name: IntersectionPoint
@@ -429,18 +423,6 @@
   - :classes: 
     - :methods: 
       - :lines: 2
-        :name: SymbolicPoint#free?
-        :complexity: 1
-      - :lines: 2
-        :name: SymbolicPoint#initialize
-        :complexity: 1
-      :lines: 9
-      :class_name: SymbolicPoint
-      :complexity: 2
-    :filename: symbolic_point.rb
-  - :classes: 
-    - :methods: 
-      - :lines: 2
         :name: Line#vector
         :complexity: 1
       - :lines: 5
@@ -459,6 +441,15 @@
       :class_name: Configuration
       :complexity: 1
     :filename: configuration.rb
+  - :classes: 
+    - :methods: 
+      - :lines: 2
+        :name: SymbolicPoint#free?
+        :complexity: 1
+      :lines: 5
+      :class_name: SymbolicPoint
+      :complexity: 1
+    :filename: symbolic_point.rb
   - :classes: 
     - :methods: []
 
@@ -596,7 +587,7 @@
     :score: 56.1
     :path: /lib/om2ec.rb
     :highest_score: 53.7
-  - :average_score: 6.4
+  - :average_score: 6.3
     :scanned_methods: 
     - :score: 18.5
       :operators: 
@@ -615,7 +606,7 @@
       - :operator: "  attr_reader"
         :score: 1.1
       :name: Point#none
-    :score: 51.0
+    :score: 50.2
     :path: /lib/om2ec/point.rb
     :highest_score: 18.5
   - :average_score: 8.6
@@ -638,24 +629,24 @@
     :score: 25.8
     :path: /lib/om2ec/constructions/affine_point.rb
     :highest_score: 16.2
-  - :average_score: 8.0
+  - :average_score: 5.3
     :scanned_methods: 
     - :score: 12.1
       :operators: 
-      - :operator: "  first_point"
-        :score: 4.2
       - :operator: "  second_point"
         :score: 4.2
-      - :operator: "  y_to"
-        :score: 1.2
-      - :operator: "  x_to"
-        :score: 1.2
+      - :operator: "  first_point"
+        :score: 4.2
       - :operator: "  assignment"
         :score: 1.2
       - :operator: "  z_to"
         :score: 1.2
+      - :operator: "  y_to"
+        :score: 1.2
+      - :operator: "  x_to"
+        :score: 1.2
       :name: Line#vector                      lib/om2ec/line.rb:12
-    :score: 23.9
+    :score: 16.0
     :path: /lib/om2ec/line.rb
     :highest_score: 12.1
   - :average_score: 3.7
@@ -724,24 +715,14 @@
     :scanned_methods: 
     - :score: 1.2
       :operators: 
-      - :operator: "  super"
-        :score: 1.2
-      :name: SymbolicPoint#initialize         lib/om2ec/constructions/symbolic_point.rb:3
-    :score: 1.2
-    :path: /lib/om2ec/constructions/symbolic_point.rb
-    :highest_score: 1.2
-  - :average_score: 1.2
-    :scanned_methods: 
-    - :score: 1.2
-      :operators: 
       - :operator: "  assignment"
         :score: 1.2
       :name: Configuration#initialize         lib/om2ec/constructions/configuration.rb:4
     :score: 2.3
     :path: /lib/om2ec/constructions/configuration.rb
     :highest_score: 1.2
-  :average: 19.4
-  :total: 194.3
+  :average: 20.5
+  :total: 184.4
 :flay: 
   :total_score: "54"
   :matches: 
@@ -960,6 +941,15 @@
     - :content: "   autoload :Sphere, File.join(CONSTRUCTIONS_DIR, 'sphere.rb')"
       :was_run: true
     :percent_run: 100
+  lib/om2ec/constructions/midpoint.rb: 
+    :lines: 
+    - :content: "   class Midpoint < SymbolicPoint"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    :percent_run: 100
   lib/om2ec/helpers/array.rb: 
     :lines: 
     - :content: "   class Array"
@@ -979,15 +969,6 @@
 
       :was_run: true
     - :content: "     end"
-      :was_run: true
-    - :content: "   end"
-      :was_run: true
-    :percent_run: 100
-  lib/om2ec/constructions/midpoint.rb: 
-    :lines: 
-    - :content: "   class Midpoint < SymbolicPoint"
-      :was_run: true
-    - :content: "   "
       :was_run: true
     - :content: "   end"
       :was_run: true
@@ -1154,39 +1135,6 @@
     - :content: "   end"
       :was_run: true
     :percent_run: 100
-  lib/om2ec/line.rb: 
-    :lines: 
-    - :content: "   class Line"
-      :was_run: true
-    - :content: "   \t\tinclude Definable"
-      :was_run: true
-    - :content: "   "
-      :was_run: true
-    - :content: "   \t\t# We're supposed to have two points."
-      :was_run: true
-    - :content: "   \t\tdef normal_vector a_point"
-      :was_run: true
-    - :content: "   \t\t\t\ti_point = IntersectionPoint.new(false)"
-      :was_run: false
-    - :content: "   \t\t\t\ti_point.add_object(self)"
-      :was_run: false
-    - :content: "   \t\t\t\ti_point.add_object(Plane.new.add_object(a_point).add_object(self))"
-      :was_run: false
-    - :content: "   \t\t\t\ti_point.to(a_point)"
-      :was_run: false
-    - :content: "   \t\tend"
-      :was_run: false
-    - :content: "   "
-      :was_run: true
-    - :content: "   \t\tdef vector"
-      :was_run: true
-    - :content: "   \t\t\t\t@vector ||= [first_point.x_to(second_point),first_point.y_to(second_point),first_point.z_to(second_point)]"
-      :was_run: true
-    - :content: "   \t\tend"
-      :was_run: true
-    - :content: "   end"
-      :was_run: true
-    :percent_run: 67
   lib/om2ec/definable/definition.rb: 
     :lines: 
     - :content: "   module Definable"
@@ -1264,6 +1212,39 @@
     - :content: "   end"
       :was_run: true
     :percent_run: 100
+  lib/om2ec/line.rb: 
+    :lines: 
+    - :content: "   class Line"
+      :was_run: true
+    - :content: "   \t\tinclude Definable"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "   \t\t# We're supposed to have two points."
+      :was_run: true
+    - :content: "   \t\tdef normal_vector a_point"
+      :was_run: true
+    - :content: "   \t\t\t\ti_point = IntersectionPoint.new(false)"
+      :was_run: true
+    - :content: "   \t\t\t\ti_point.add_object(self)"
+      :was_run: true
+    - :content: "   \t\t\t\ti_point.add_object(Plane.new.add_object(a_point).add_object(self))"
+      :was_run: true
+    - :content: "   \t\t\t\ti_point.to(a_point)"
+      :was_run: true
+    - :content: "   \t\tend"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "   \t\tdef vector"
+      :was_run: true
+    - :content: "   \t\t\t\t@vector ||= [first_point.x_to(second_point),first_point.y_to(second_point),first_point.z_to(second_point)]"
+      :was_run: true
+    - :content: "   \t\tend"
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    :percent_run: 100
   lib/om2ec/constructions/normal_line.rb: 
     :lines: 
     - :content: "   class NormalLine < Line"
@@ -1302,23 +1283,15 @@
     - :content: "     def self.succ"
       :was_run: true
     - :content: "       instance.succ"
-      :was_run: false
+      :was_run: true
     - :content: "     end"
-      :was_run: false
+      :was_run: true
     - :content: "   end"
-      :was_run: false
-    :percent_run: 81
+      :was_run: true
+    :percent_run: 100
   lib/om2ec/constructions/symbolic_point.rb: 
     :lines: 
     - :content: "   class SymbolicPoint < Point"
-      :was_run: true
-    - :content: "   "
-      :was_run: true
-    - :content: "     def initialize"
-      :was_run: true
-    - :content: "       super()"
-      :was_run: true
-    - :content: "     end"
       :was_run: true
     - :content: "   "
       :was_run: true
@@ -1327,6 +1300,15 @@
     - :content: "       false"
       :was_run: true
     - :content: "     end"
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    :percent_run: 100
+  lib/om2ec/constructions/intersection_point.rb: 
+    :lines: 
+    - :content: "   class IntersectionPoint < SymbolicPoint"
+      :was_run: true
+    - :content: "   "
       :was_run: true
     - :content: "   end"
       :was_run: true
@@ -1340,7 +1322,7 @@
     - :content: "   end"
       :was_run: true
     :percent_run: 100
-  :global_percent_run: 96.8
+  :global_percent_run: 100.0
   lib/om2ec/point.rb: 
     :lines: 
     - :content: "   class Point"
@@ -1355,7 +1337,7 @@
       :was_run: true
     - :content: "   \t\t\t\tif numbered"
       :was_run: true
-    - :content: "   \t\t\t\t\t\t@variable_id = NumberGenerator.instance.succ"
+    - :content: "   \t\t\t\t\t\t@variable_id = NumberGenerator.succ"
       :was_run: true
     - :content: !binary |
         ICAgCQkJCWVuZA==
