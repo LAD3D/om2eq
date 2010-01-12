@@ -36,3 +36,13 @@ shared_examples_for "an identified object" do
     @set.variable_id.should_not be_nil
   end
 end
+
+class String
+		def upcased?
+				self == upcase
+		end
+
+		def downcased?
+				self == downcase
+		end
+end

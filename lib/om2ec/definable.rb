@@ -6,8 +6,8 @@ module Definable
       alias_method :initialize_without_definition, :initialize
       alias_method :add_object_not_definable, :add_object if method_defined? :add_object
 
-      define_method :initialize do
-        initialize_without_definition
+      define_method :initialize do |*args|
+        initialize_without_definition *args
         @definitions = self.class.definitions(self)
       end
     end
@@ -18,6 +18,7 @@ module Definable
 						object_dependencies << obj
 						obj.dependant_objects << self
 				end
+				self
 		end
 
 		def object_dependencies
