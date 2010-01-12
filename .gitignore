@@ -19,3 +19,7 @@ rdoc
 pkg
 
 ## PROJECT::SPECIFIC
+
+tmp/metric_fu/output/*
+tmp/metric_fu/scratch/*
+tmp/metric_fu/report.yml

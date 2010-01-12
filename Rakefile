@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'rake'
+require 'metric_fu'
 
 begin
   require 'jeweler'
@@ -12,6 +13,7 @@ begin
     gem.add_dependency "nokogiri", ">= 1.4"
     gem.add_development_dependency "rspec", ">= 1.2.9"
     gem.add_development_dependency "cucumber", ">= 0"
+    gem.add_development_dependency "metric_fu", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError
