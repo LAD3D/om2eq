@@ -20,6 +20,12 @@ module Definable
 								self
 						end
 
+						def generate
+								if complete?
+										@generated ||= @result_klazz.new(*@args)
+								end
+						end
+
       private
       def add_object(object)
         if @args_klazz.any? {|x| object.is_a?(x)}

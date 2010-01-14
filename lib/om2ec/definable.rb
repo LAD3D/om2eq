@@ -30,7 +30,10 @@ module Definable
 		end
 
 		def completed_by(definition)
-				@proper_definition = definition unless @proper_definition
+				unless @proper_definition
+						@proper_definition = definition
+						@internal_object = @proper_definition.generate
+				end
 		end
 
   module ClassMethods
