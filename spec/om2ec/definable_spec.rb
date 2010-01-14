@@ -40,24 +40,24 @@ describe Definable do
     @definable.add_object point
   end
 
-		it "should call completed_by when one definition gets complete" do
-				@definable.should_receive(:completed_by).with(@definable.definitions[0])
-				@definable.add_object Point.new
-				@definable.add_object AffinePoint.new(0,10,20)
-		end
+  it "should call completed_by when one definition gets complete" do
+    @definable.should_receive(:completed_by).with(@definable.definitions[0])
+    @definable.add_object Point.new
+    @definable.add_object AffinePoint.new(0,10,20)
+  end
 
-		it "should add added object to dependencies if it is added" do
-				point = Point.new
-				@definable.add_object point
-				@definable.object_dependencies.should include(point)
-				point.dependant_objects.should include(@definable)
-		end
+  it "should add added object to dependencies if it is added" do
+    point = Point.new
+    @definable.add_object point
+    @definable.object_dependencies.should include(point)
+    point.dependant_objects.should include(@definable)
+  end
 
-		it "should not add added object to dependencies if it is not added" do
-				obj = Class.new.new
-				@definable.add_object obj
-				@definable.object_dependencies.should_not include(obj)
-				lambda{obj.dependant_objects}.should raise_error
-		end
+  it "should not add added object to dependencies if it is not added" do
+    obj = Class.new.new
+    @definable.add_object obj
+    @definable.object_dependencies.should_not include(obj)
+    lambda{obj.dependant_objects}.should raise_error
+  end
 end
 

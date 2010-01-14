@@ -13,28 +13,28 @@ module Definable
     end
   end
 
-		def add_object obj
-				if @definitions.map{|definition| definition.add(obj)}.any?{|x| !x.nil? }
-						object_dependencies << obj
-						obj.dependant_objects << self
-				end
-				self
-		end
+  def add_object obj
+    if @definitions.map{|definition| definition.add(obj)}.any?{|x| !x.nil? }
+      object_dependencies << obj
+      obj.dependant_objects << self
+    end
+    self
+  end
 
-		def object_dependencies
-				@object_dependencies ||= []
-		end
+  def object_dependencies
+    @object_dependencies ||= []
+  end
 
-		def dependant_objects
-				@dependant_object ||= []
-		end
+  def dependant_objects
+    @dependant_object ||= []
+  end
 
-		def completed_by(definition)
-				unless @proper_definition
-						@proper_definition = definition
-						@internal_object = @proper_definition.generate
-				end
-		end
+  def completed_by(definition)
+    unless @proper_definition
+      @proper_definition = definition
+      @internal_object = @proper_definition.generate
+    end
+  end
 
   module ClassMethods
 

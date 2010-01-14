@@ -38,17 +38,17 @@ shared_examples_for "an identified object" do
 end
 
 class Object
-		def vector?
-				self.is_a?(Array) && self.size == 3
-		end
+  def vector?
+    self.is_a?(Array) && self.size == 3
+  end
 end
 
 class String
-		def upcased?
-				self == upcase
-		end
+  def upcased?
+    self == upcase
+  end
 
-		def downcased?
-				self == downcase
-		end
+  def downcased?
+    self == downcase
+  end
 end
