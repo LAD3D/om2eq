@@ -41,6 +41,8 @@ module Definable
     def definition(args)
       arguments = args.keys.detect{|x| x.is_a?(Array) && x.all?{|y| y.is_a?(Class)}}
       target = args[arguments]
+      target.send :include, ::Constructable
+      target.expected_arguments = arguments.dup
       self.add_definition(Definition.new(arguments,target))
     end
 

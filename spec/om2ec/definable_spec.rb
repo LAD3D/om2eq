@@ -14,6 +14,11 @@ describe Definable do
     end
   end
 
+  after(:each) do
+    Midpoint.expected_arguments.should_not be_empty
+    ParallelLine.expected_arguments.should_not be_empty
+  end
+
   it "should extend Definable::ClassMethods when including Definable" do
     (class << @class; self; end).should include(Definable::ClassMethods)
   end
@@ -70,6 +75,10 @@ describe Definable do
     @definable.add_object Class.new(Point).new
     @definable.add_object Class.new(Line).new
     @definable.instance_variable_get(:@internal_object).should be_a(ParallelLine)
+  end
+
+  it "should force the target to include Constructable" do
+    Midpoint.should include(::Constructable)
   end
 end
 

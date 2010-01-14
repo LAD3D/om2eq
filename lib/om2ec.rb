@@ -3,7 +3,7 @@ CONSTRUCTIONS_DIR = File.join(ROOT_DIR, 'constructions')
 DEFINABLE_DIR = File.join(ROOT_DIR, 'definable')
 HELPERS_DIR = File.join(ROOT_DIR, 'helpers')
 
-
+autoload :Constructable, File.join(ROOT_DIR, 'constructable.rb')
 autoload :Definable, File.join(ROOT_DIR, 'definable.rb')
 autoload :Line, File.join(ROOT_DIR, 'line.rb')
 autoload :Plane, File.join(ROOT_DIR, 'plane.rb')

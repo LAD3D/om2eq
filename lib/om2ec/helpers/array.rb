@@ -1,9 +1,10 @@
 class Array
   def delete_first(obj = nil, &block)
-    if block
-      self.delete_at(self.index(&block))
-    elsif obj
-						self.delete_at(self.index(obj))
-				end
+    index = if block
+              self.index(&block)
+            elsif obj
+              self.index(obj)
+            end
+    index.nil? ? nil : self.delete_at(index)
   end
 end
