@@ -5,7 +5,7 @@ describe Definable do
     @class = Class.new
     @class.send :include, Definable
     @class.definition [Point, Point] => Midpoint
-				@class.definition [Point, Line] => Line
+				@class.definition [Point, Line] => ParallelLine
     @definable = @class.new
     [@class, @definable].each do |var|
       def var.definitions
@@ -58,6 +58,18 @@ describe Definable do
     @definable.add_object obj
     @definable.object_dependencies.should_not include(obj)
     lambda{obj.dependant_objects}.should raise_error
+  end
+
+  it "should get an internal object when a definition is completed" do
+    @definable.add_object Class.new(Point).new
+    @definable.add_object Class.new(Point).new
+    @definable.instance_variable_get(:@internal_object).should be_a(Midpoint)
+  end
+
+  it "should get the proper internal object when a definition is completed" do
+    @definable.add_object Class.new(Point).new
+    @definable.add_object Class.new(Line).new
+    @definable.instance_variable_get(:@internal_object).should be_a(ParallelLine)
   end
 end
 

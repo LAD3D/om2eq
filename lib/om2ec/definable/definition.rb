@@ -31,7 +31,7 @@ module Definable
         if @args_klazz.any? {|x| object.is_a?(x)}
           @args << object
           @args_klazz.delete_first {|x| object.is_a?(x)}
-										@owner.completed_by self if complete?
+										@owner.completed_by(self) if complete?
           object
         end
       end
