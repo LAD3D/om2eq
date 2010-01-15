@@ -55,7 +55,7 @@ module Definable
 
       it "should generate an object" do
         add_to_definition @definition, Point, Plane
-#        @definition.generate.should_not be_nil
+        @definition.generate.should_not be_nil
       end
 
       it "should not generate a class if it is not complete" do
