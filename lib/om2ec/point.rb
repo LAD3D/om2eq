@@ -16,19 +16,11 @@ class Point
     false
   end
 
-  def x
-    @x ||= "x#{variable_id}".send((free?) ? :upcase : :downcase)
-  end
-
-  def y
-    @y ||= "y#{variable_id}".send((free?) ? :upcase : :downcase)
-  end
-
-  def z
-    @z ||= "z#{variable_id}".send((free?) ? :upcase : :downcase)
-  end
-
   %w{x y z}.each do |var|
+    define_method var do
+      instance_variable_set("@#{var}", instance_variable_get("@#{var}") || ("#{var}#{variable_id}".send((free?) ? :upcase : :downcase)))
+    end
+
     define_method "#{var}_to" do |point|
       "(#{self.send(var)}-#{point.send(var)})"
     end
