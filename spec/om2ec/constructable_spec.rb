@@ -57,6 +57,13 @@ describe Constructable do
     it "should fail when passed wrong arguments" do
       @instance.retrieve_test(@win_args).should == true
     end
+
+    it "should pass even with subclasses" do
+      klazz1, klazz2 = Class.new, Class.new
+      @class.expected_arguments = [klazz2, klazz1]
+      @instance.retrieve_test([klazz1.new, klazz2.new]).should == true
+      @class.expected_arguments = [String, Fixnum]
+    end
   end
 end
 

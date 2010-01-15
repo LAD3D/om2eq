@@ -1,0 +1,1799 @@
+--- 
+:saikuro: 
+  :methods: 
+  - :lines: 7
+    :name: Definable::ClassMethods::Definition#add_object
+    :complexity: 5
+  - :lines: 7
+    :name: Constructable#retrieve_arguments
+    :complexity: 4
+  - :lines: 11
+    :name: Definable#self.included
+    :complexity: 4
+  - :lines: 6
+    :name: Definable#add_object
+    :complexity: 4
+  - :lines: 7
+    :name: Array#delete_first
+    :complexity: 4
+  - :lines: 4
+    :name: Constructable#retrieve_test
+    :complexity: 3
+  - :lines: 6
+    :name: Definable::ClassMethods#definition
+    :complexity: 3
+  - :lines: 2
+    :name: Point#y
+    :complexity: 2
+  - :lines: 2
+    :name: Point#x
+    :complexity: 2
+  - :lines: 6
+    :name: NormalLine#initialize
+    :complexity: 2
+  - :lines: 5
+    :name: Definable#completed_by
+    :complexity: 2
+  - :lines: 4
+    :name: Definable::ClassMethods::Definition#generate
+    :complexity: 2
+  - :lines: 5
+    :name: Definable::ClassMethods#add_definition
+    :complexity: 2
+  - :lines: 2
+    :name: Definable::ClassMethods::Definition#add
+    :complexity: 2
+  - :lines: 2
+    :name: Point#z
+    :complexity: 2
+  - :lines: 4
+    :name: Point#initialize
+    :complexity: 2
+  - :lines: 3
+    :name: Definable::ClassMethods#definitions
+    :complexity: 2
+  - :lines: 2
+    :name: Constructable#expected_arguments
+    :complexity: 1
+  - :lines: 2
+    :name: Constructable::ClassMethods#expected_arguments
+    :complexity: 1
+  - :lines: 2
+    :name: Constructable#self.included
+    :complexity: 1
+  - :lines: 2
+    :name: Constructable::ClassMethods#expected_arguments=
+    :complexity: 1
+  - :lines: 2
+    :name: NumberGenerator#initialize
+    :complexity: 1
+  - :lines: 2
+    :name: NumberGenerator#succ
+    :complexity: 1
+  - :lines: 2
+    :name: NumberGenerator#self.succ
+    :complexity: 1
+  - :lines: 2
+    :name: Definable#dependant_objects
+    :complexity: 1
+  - :lines: 2
+    :name: Definable#object_dependencies
+    :complexity: 1
+  - :lines: 3
+    :name: AffinePoint#initialize
+    :complexity: 1
+  - :lines: 2
+    :name: AffinePoint#free?
+    :complexity: 1
+  - :lines: 5
+    :name: AffinePoint#==
+    :complexity: 1
+  - :lines: 5
+    :name: Line#normal_vector
+    :complexity: 1
+  - :lines: 3
+    :name: Definable::ClassMethods::Definition#for_object
+    :complexity: 1
+  - :lines: 2
+    :name: Definable::ClassMethods::Definition#complete?
+    :complexity: 1
+  - :lines: 2
+    :name: Line#vector
+    :complexity: 1
+  - :lines: 3
+    :name: Definable::ClassMethods::Definition#initialize
+    :complexity: 1
+  - :lines: 2
+    :name: Point#to
+    :complexity: 1
+  - :lines: 2
+    :name: Point#to_vector
+    :complexity: 1
+  - :lines: 2
+    :name: ParallelLine#initialize
+    :complexity: 1
+  - :lines: 2
+    :name: Midpoint#initialize
+    :complexity: 1
+  - :lines: 2
+    :name: Configuration#initialize
+    :complexity: 1
+  - :lines: 2
+    :name: Point#free?
+    :complexity: 1
+  - :lines: 2
+    :name: Point#bound?
+    :complexity: 1
+  - :lines: 2
+    :name: SymbolicPoint#free?
+    :complexity: 1
+  :classes: 
+  - :lines: 45
+    :defs: 
+    - :lines: 4
+      :name: Point#initialize
+      :complexity: 2
+    - :lines: 2
+      :name: Point#bound?
+      :complexity: 1
+    - :lines: 2
+      :name: Point#free?
+      :complexity: 1
+    - :lines: 2
+      :name: Point#x
+      :complexity: 2
+    - :lines: 2
+      :name: Point#y
+      :complexity: 2
+    - :lines: 2
+      :name: Point#z
+      :complexity: 2
+    - :lines: 2
+      :name: Point#to_vector
+      :complexity: 1
+    - :lines: 2
+      :name: Point#to
+      :complexity: 1
+    :name: Point
+    :complexity: 14
+  - :lines: 35
+    :defs: 
+    - :lines: 3
+      :name: Definable::ClassMethods::Definition#initialize
+      :complexity: 1
+    - :lines: 2
+      :name: Definable::ClassMethods::Definition#add
+      :complexity: 2
+    - :lines: 2
+      :name: Definable::ClassMethods::Definition#complete?
+      :complexity: 1
+    - :lines: 3
+      :name: Definable::ClassMethods::Definition#for_object
+      :complexity: 1
+    - :lines: 4
+      :name: Definable::ClassMethods::Definition#generate
+      :complexity: 2
+    - :lines: 7
+      :name: Definable::ClassMethods::Definition#add_object
+      :complexity: 5
+    :name: Definable::ClassMethods::Definition
+    :complexity: 12
+  - :lines: 39
+    :defs: 
+    - :lines: 11
+      :name: Definable#self.included
+      :complexity: 4
+    - :lines: 6
+      :name: Definable#add_object
+      :complexity: 4
+    - :lines: 2
+      :name: Definable#object_dependencies
+      :complexity: 1
+    - :lines: 2
+      :name: Definable#dependant_objects
+      :complexity: 1
+    - :lines: 5
+      :name: Definable#completed_by
+      :complexity: 2
+    :name: Definable
+    :complexity: 12
+  - :lines: 27
+    :defs: 
+    - :lines: 2
+      :name: Constructable#self.included
+      :complexity: 1
+    - :lines: 7
+      :name: Constructable#retrieve_arguments
+      :complexity: 4
+    - :lines: 4
+      :name: Constructable#retrieve_test
+      :complexity: 3
+    - :lines: 2
+      :name: Constructable#expected_arguments
+      :complexity: 1
+    :name: Constructable
+    :complexity: 9
+  - :lines: 21
+    :defs: 
+    - :lines: 6
+      :name: Definable::ClassMethods#definition
+      :complexity: 3
+    - :lines: 5
+      :name: Definable::ClassMethods#add_definition
+      :complexity: 2
+    - :lines: 3
+      :name: Definable::ClassMethods#definitions
+      :complexity: 2
+    :name: Definable::ClassMethods
+    :complexity: 7
+  - :lines: 9
+    :defs: 
+    - :lines: 7
+      :name: Array#delete_first
+      :complexity: 4
+    :name: Array
+    :complexity: 4
+  - :lines: 19
+    :defs: 
+    - :lines: 3
+      :name: AffinePoint#initialize
+      :complexity: 1
+    - :lines: 2
+      :name: AffinePoint#free?
+      :complexity: 1
+    - :lines: 5
+      :name: AffinePoint#==
+      :complexity: 1
+    :name: AffinePoint
+    :complexity: 3
+  - :lines: 14
+    :defs: 
+    - :lines: 2
+      :name: NumberGenerator#initialize
+      :complexity: 1
+    - :lines: 2
+      :name: NumberGenerator#succ
+      :complexity: 1
+    - :lines: 2
+      :name: NumberGenerator#self.succ
+      :complexity: 1
+    :name: NumberGenerator
+    :complexity: 3
+  - :lines: 8
+    :defs: 
+    - :lines: 2
+      :name: Constructable::ClassMethods#expected_arguments
+      :complexity: 1
+    - :lines: 2
+      :name: Constructable::ClassMethods#expected_arguments=
+      :complexity: 1
+    :name: Constructable::ClassMethods
+    :complexity: 2
+  - :lines: 11
+    :defs: 
+    - :lines: 6
+      :name: NormalLine#initialize
+      :complexity: 2
+    :name: NormalLine
+    :complexity: 2
+  - :lines: 14
+    :defs: 
+    - :lines: 5
+      :name: Line#normal_vector
+      :complexity: 1
+    - :lines: 2
+      :name: Line#vector
+      :complexity: 1
+    :name: Line
+    :complexity: 2
+  - :lines: 5
+    :defs: 
+    - :lines: 2
+      :name: Midpoint#initialize
+      :complexity: 1
+    :name: Midpoint
+    :complexity: 1
+  - :lines: 5
+    :defs: 
+    - :lines: 2
+      :name: SymbolicPoint#free?
+      :complexity: 1
+    :name: SymbolicPoint
+    :complexity: 1
+  - :lines: 6
+    :defs: 
+    - :lines: 2
+      :name: Configuration#initialize
+      :complexity: 1
+    :name: Configuration
+    :complexity: 1
+  - :lines: 5
+    :defs: 
+    - :lines: 2
+      :name: ParallelLine#initialize
+      :complexity: 1
+    :name: ParallelLine
+    :complexity: 1
+  - :lines: 2
+    :name: ParallelPlane
+    :complexity: 0
+  - :lines: 2
+    :name: Segment
+    :complexity: 0
+  - :lines: 2
+    :name: PerpendicularLine
+    :complexity: 0
+  - :lines: 2
+    :name: IntersectionPoint
+    :complexity: 0
+  - :lines: 2
+    :name: Sphere
+    :complexity: 0
+  - :lines: 2
+    :name: NormalPlane
+    :complexity: 0
+  - :lines: 4
+    :name: Circle
+    :complexity: 0
+  - :lines: 2
+    :name: Plane
+    :complexity: 0
+  - :lines: 2
+    :name: PointOnLine
+    :complexity: 0
+  - :lines: 0
+    :name: ""
+    :complexity: 0
+  - :lines: 2
+    :name: Definable
+    :complexity: 0
+  - :lines: 2
+    :name: Definable::ClassMethods
+    :complexity: 0
+  - :lines: 2
+    :name: Definable
+    :complexity: 0
+  - :lines: 2
+    :name: Definable::ClassMethods
+    :complexity: 0
+  :files: 
+  - :classes: 
+    - :methods: 
+      - :lines: 4
+        :name: Point#initialize
+        :complexity: 2
+      - :lines: 2
+        :name: Point#x
+        :complexity: 2
+      - :lines: 2
+        :name: Point#z
+        :complexity: 2
+      - :lines: 2
+        :name: Point#y
+        :complexity: 2
+      - :lines: 2
+        :name: Point#to_vector
+        :complexity: 1
+      - :lines: 2
+        :name: Point#free?
+        :complexity: 1
+      - :lines: 2
+        :name: Point#bound?
+        :complexity: 1
+      - :lines: 2
+        :name: Point#to
+        :complexity: 1
+      :lines: 45
+      :class_name: Point
+      :complexity: 14
+    :filename: point.rb
+  - :classes: 
+    - :methods: []
+
+      :lines: 2
+      :class_name: Definable
+      :complexity: 0
+    - :methods: []
+
+      :lines: 2
+      :class_name: Definable::ClassMethods
+      :complexity: 0
+    - :methods: 
+      - :lines: 7
+        :name: Definable::ClassMethods::Definition#add_object
+        :complexity: 5
+      - :lines: 4
+        :name: Definable::ClassMethods::Definition#generate
+        :complexity: 2
+      - :lines: 2
+        :name: Definable::ClassMethods::Definition#add
+        :complexity: 2
+      - :lines: 3
+        :name: Definable::ClassMethods::Definition#for_object
+        :complexity: 1
+      - :lines: 2
+        :name: Definable::ClassMethods::Definition#complete?
+        :complexity: 1
+      - :lines: 3
+        :name: Definable::ClassMethods::Definition#initialize
+        :complexity: 1
+      :lines: 35
+      :class_name: Definable::ClassMethods::Definition
+      :complexity: 12
+    :filename: definition.rb
+  - :classes: 
+    - :methods: 
+      - :lines: 11
+        :name: Definable#self.included
+        :complexity: 4
+      - :lines: 6
+        :name: Definable#add_object
+        :complexity: 4
+      - :lines: 5
+        :name: Definable#completed_by
+        :complexity: 2
+      - :lines: 2
+        :name: Definable#dependant_objects
+        :complexity: 1
+      - :lines: 2
+        :name: Definable#object_dependencies
+        :complexity: 1
+      :lines: 39
+      :class_name: Definable
+      :complexity: 12
+    - :methods: 
+      - :lines: 6
+        :name: Definable::ClassMethods#definition
+        :complexity: 3
+      - :lines: 5
+        :name: Definable::ClassMethods#add_definition
+        :complexity: 2
+      - :lines: 3
+        :name: Definable::ClassMethods#definitions
+        :complexity: 2
+      :lines: 21
+      :class_name: Definable::ClassMethods
+      :complexity: 7
+    :filename: definable.rb
+  - :classes: 
+    - :methods: 
+      - :lines: 7
+        :name: Constructable#retrieve_arguments
+        :complexity: 4
+      - :lines: 4
+        :name: Constructable#retrieve_test
+        :complexity: 3
+      - :lines: 2
+        :name: Constructable#expected_arguments
+        :complexity: 1
+      - :lines: 2
+        :name: Constructable#self.included
+        :complexity: 1
+      :lines: 27
+      :class_name: Constructable
+      :complexity: 9
+    - :methods: 
+      - :lines: 2
+        :name: Constructable::ClassMethods#expected_arguments=
+        :complexity: 1
+      - :lines: 2
+        :name: Constructable::ClassMethods#expected_arguments
+        :complexity: 1
+      :lines: 8
+      :class_name: Constructable::ClassMethods
+      :complexity: 2
+    :filename: constructable.rb
+  - :classes: 
+    - :methods: 
+      - :lines: 7
+        :name: Array#delete_first
+        :complexity: 4
+      :lines: 9
+      :class_name: Array
+      :complexity: 4
+    :filename: array.rb
+  - :classes: 
+    - :methods: 
+      - :lines: 2
+        :name: NumberGenerator#self.succ
+        :complexity: 1
+      - :lines: 2
+        :name: NumberGenerator#succ
+        :complexity: 1
+      - :lines: 2
+        :name: NumberGenerator#initialize
+        :complexity: 1
+      :lines: 14
+      :class_name: NumberGenerator
+      :complexity: 3
+    :filename: number_generator.rb
+  - :classes: 
+    - :methods: 
+      - :lines: 5
+        :name: AffinePoint#==
+        :complexity: 1
+      - :lines: 2
+        :name: AffinePoint#free?
+        :complexity: 1
+      - :lines: 3
+        :name: AffinePoint#initialize
+        :complexity: 1
+      :lines: 19
+      :class_name: AffinePoint
+      :complexity: 3
+    :filename: affine_point.rb
+  - :classes: 
+    - :methods: 
+      - :lines: 6
+        :name: NormalLine#initialize
+        :complexity: 2
+      :lines: 11
+      :class_name: NormalLine
+      :complexity: 2
+    :filename: normal_line.rb
+  - :classes: 
+    - :methods: 
+      - :lines: 2
+        :name: Line#vector
+        :complexity: 1
+      - :lines: 5
+        :name: Line#normal_vector
+        :complexity: 1
+      :lines: 14
+      :class_name: Line
+      :complexity: 2
+    :filename: line.rb
+  - :classes: 
+    - :methods: 
+      - :lines: 2
+        :name: ParallelLine#initialize
+        :complexity: 1
+      :lines: 5
+      :class_name: ParallelLine
+      :complexity: 1
+    :filename: parallel_line.rb
+  - :classes: 
+    - :methods: 
+      - :lines: 2
+        :name: Midpoint#initialize
+        :complexity: 1
+      :lines: 5
+      :class_name: Midpoint
+      :complexity: 1
+    :filename: midpoint.rb
+  - :classes: 
+    - :methods: 
+      - :lines: 2
+        :name: Configuration#initialize
+        :complexity: 1
+      :lines: 6
+      :class_name: Configuration
+      :complexity: 1
+    :filename: configuration.rb
+  - :classes: 
+    - :methods: 
+      - :lines: 2
+        :name: SymbolicPoint#free?
+        :complexity: 1
+      :lines: 5
+      :class_name: SymbolicPoint
+      :complexity: 1
+    :filename: symbolic_point.rb
+  - :classes: 
+    - :methods: []
+
+      :lines: 2
+      :class_name: NormalPlane
+      :complexity: 0
+    :filename: normal_plane.rb
+  - :classes: 
+    - :methods: []
+
+      :lines: 2
+      :class_name: Segment
+      :complexity: 0
+    :filename: segment.rb
+  - :classes: 
+    - :methods: []
+
+      :lines: 2
+      :class_name: PerpendicularLine
+      :complexity: 0
+    :filename: perpendicular_line.rb
+  - :classes: 
+    - :methods: []
+
+      :lines: 2
+      :class_name: IntersectionPoint
+      :complexity: 0
+    :filename: intersection_point.rb
+  - :classes: 
+    - :methods: []
+
+      :lines: 2
+      :class_name: Sphere
+      :complexity: 0
+    :filename: sphere.rb
+  - :classes: 
+    - :methods: []
+
+      :lines: 2
+      :class_name: ParallelPlane
+      :complexity: 0
+    :filename: parallel_plane.rb
+  - :classes: 
+    - :methods: []
+
+      :lines: 4
+      :class_name: Circle
+      :complexity: 0
+    :filename: circle.rb
+  - :classes: 
+    - :methods: []
+
+      :lines: 2
+      :class_name: Plane
+      :complexity: 0
+    :filename: plane.rb
+  - :classes: 
+    - :methods: []
+
+      :lines: 2
+      :class_name: PointOnLine
+      :complexity: 0
+    :filename: point_on_line.rb
+  - :classes: 
+    - :methods: []
+
+      :lines: 0
+      :class_name: ""
+      :complexity: 0
+    - :methods: []
+
+      :lines: 2
+      :class_name: Definable
+      :complexity: 0
+    - :methods: []
+
+      :lines: 2
+      :class_name: Definable::ClassMethods
+      :complexity: 0
+    :filename: om2ec.rb
+:churn: 
+  :changes: 
+  - :file_path: lib/om2ec.rb
+    :times_changed: 12
+  - :file_path: lib/om2ec/definable.rb
+    :times_changed: 11
+  - :file_path: spec/spec_helper.rb
+    :times_changed: 9
+  - :file_path: spec/om2ec/definable_spec.rb
+    :times_changed: 9
+  - :file_path: lib/om2ec/point.rb
+    :times_changed: 8
+  - :file_path: spec/om2ec/point_spec.rb
+    :times_changed: 7
+  - :file_path: spec/om2ec/definable/definition_spec.rb
+    :times_changed: 6
+  - :file_path: lib/om2ec/definable/definition.rb
+    :times_changed: 6
+  - :file_path: lib/om2ec/line.rb
+    :times_changed: 6
+  - :file_path: spec/om2ec/line_spec.rb
+    :times_changed: 5
+  - :file_path: lib/om2ec/point_ordered_set.rb
+    :times_changed: 5
+  - :file_path: lib/om2ec/constructions/affine_point.rb
+    :times_changed: 5
+:flog: 
+  :pages: 
+  - :average_score: 29.3
+    :scanned_methods: 
+    - :score: 56.1
+      :operators: 
+      - :operator: "  join"
+        :score: 31.7
+      - :operator: "  autoload"
+        :score: 22.0
+      - :operator: "  dirname"
+        :score: 1.3
+      - :operator: "  require"
+        :score: 1.1
+      :name: main#none
+    :score: 58.5
+    :path: /lib/om2ec.rb
+    :highest_score: 56.1
+  - :average_score: 10.7
+    :scanned_methods: 
+    - :score: 29.9
+      :operators: 
+      - :operator: "  to_proc_normal"
+        :score: 9.5
+      - :operator: "  assignment"
+        :score: 4.5
+      - :operator: "  branch"
+        :score: 4.1
+      - :operator: "  expected_arguments"
+        :score: 3.3
+      - :operator: "  map"
+        :score: 3.1
+      - :operator: "  join"
+        :score: 3.0
+      - :operator: "  block_pass"
+        :score: 1.9
+      - :operator: "  is_a?"
+        :score: 1.6
+      - :operator: "  delete_first"
+        :score: 1.5
+      - :operator: "  class"
+        :score: 1.5
+      - :operator: "  dup"
+        :score: 1.4
+      - :operator: "  raise"
+        :score: 1.3
+      - :operator: "  retrieve_test"
+        :score: 1.2
+      :name: Constructable#retrieve_arguments lib/om2ec/constructable.rb:7
+    :score: 64.3
+    :path: /lib/om2ec/constructable.rb
+    :highest_score: 29.9
+  - :average_score: 6.3
+    :scanned_methods: 
+    - :score: 18.5
+      :operators: 
+      - :operator: "  send"
+        :score: 7.8
+      - :operator: "  define_method"
+        :score: 6.0
+      - :operator: "  assignment"
+        :score: 2.5
+      - :operator: "  branch"
+        :score: 2.3
+      - :operator: "  include"
+        :score: 2.2
+      - :operator: "  each"
+        :score: 1.1
+      - :operator: "  attr_reader"
+        :score: 1.1
+      :name: Point#none
+    :score: 50.2
+    :path: /lib/om2ec/point.rb
+    :highest_score: 18.5
+  - :average_score: 8.6
+    :scanned_methods: 
+    - :score: 16.2
+      :operators: 
+      - :operator: "  =="
+        :score: 4.4
+      - :operator: "  branch"
+        :score: 3.9
+      - :operator: "  aff_y"
+        :score: 3.4
+      - :operator: "  aff_z"
+        :score: 3.4
+      - :operator: "  aff_x"
+        :score: 3.2
+      - :operator: "  is_a?"
+        :score: 1.3
+      :name: AffinePoint#==                   lib/om2ec/constructions/affine_point.rb:14
+    :score: 25.8
+    :path: /lib/om2ec/constructions/affine_point.rb
+    :highest_score: 16.2
+  - :average_score: 8.0
+    :scanned_methods: 
+    - :score: 12.1
+      :operators: 
+      - :operator: "  first_point"
+        :score: 4.2
+      - :operator: "  second_point"
+        :score: 4.2
+      - :operator: "  y_to"
+        :score: 1.2
+      - :operator: "  x_to"
+        :score: 1.2
+      - :operator: "  assignment"
+        :score: 1.2
+      - :operator: "  z_to"
+        :score: 1.2
+      :name: Line#vector                      lib/om2ec/line.rb:12
+    :score: 23.9
+    :path: /lib/om2ec/line.rb
+    :highest_score: 12.1
+  - :average_score: 3.6
+    :scanned_methods: 
+    - :score: 11.4
+      :operators: 
+      - :operator: "  branch"
+        :score: 5.2
+      - :operator: "  is_a?"
+        :score: 2.8
+      - :operator: "  assignment"
+        :score: 2.8
+      - :operator: "  completed_by"
+        :score: 1.5
+      - :operator: "  complete?"
+        :score: 1.4
+      - :operator: "  <<"
+        :score: 1.4
+      - :operator: "  delete_first"
+        :score: 1.4
+      - :operator: "  any?"
+        :score: 1.2
+      :name: Definition#add_object            lib/om2ec/definable/definition.rb:30
+    :score: 25.5
+    :path: /lib/om2ec/definable/definition.rb
+    :highest_score: 11.4
+  - :average_score: 5.2
+    :scanned_methods: 
+    - :score: 9.4
+      :operators: 
+      - :operator: "  []"
+        :score: 6.6
+      - :operator: "  assignment"
+        :score: 3.6
+      - :operator: "  branch"
+        :score: 1.2
+      - :operator: "  is_a?"
+        :score: 1.2
+      - :operator: "  lit_fixnum"
+        :score: 0.8
+      :name: NormalLine#initialize            lib/om2ec/constructions/normal_line.rb:5
+    :score: 10.5
+    :path: /lib/om2ec/constructions/normal_line.rb
+    :highest_score: 9.4
+  - :average_score: 7.4
+    :scanned_methods: 
+    - :score: 7.4
+      :operators: 
+      - :operator: "  branch"
+        :score: 3.4
+      - :operator: "  index"
+        :score: 2.5
+      - :operator: "  assignment"
+        :score: 2.2
+      - :operator: "  block_pass"
+        :score: 1.4
+      - :operator: "  delete_at"
+        :score: 1.2
+      - :operator: "  nil?"
+        :score: 1.1
+      :name: Array#delete_first               lib/om2ec/helpers/array.rb:2
+    :score: 7.4
+    :path: /lib/om2ec/helpers/array.rb
+    :highest_score: 7.4
+  - :average_score: 3.5
+    :scanned_methods: 
+    - :score: 3.5
+      :operators: 
+      - :operator: "  assignment"
+        :score: 3.3
+      - :operator: "  retrieve_arguments"
+        :score: 1.1
+      :name: ParallelLine#initialize          lib/om2ec/constructions/parallel_line.rb:3
+    :score: 3.5
+    :path: /lib/om2ec/constructions/parallel_line.rb
+    :highest_score: 3.5
+  - :average_score: 3.5
+    :scanned_methods: 
+    - :score: 3.5
+      :operators: 
+      - :operator: "  assignment"
+        :score: 3.3
+      - :operator: "  retrieve_arguments"
+        :score: 1.1
+      :name: Midpoint#initialize              lib/om2ec/constructions/midpoint.rb:3
+    :score: 3.5
+    :path: /lib/om2ec/constructions/midpoint.rb
+    :highest_score: 3.5
+  - :average_score: 2.2
+    :scanned_methods: 
+    - :score: 2.2
+      :operators: 
+      - :operator: "  attr_accessor"
+        :score: 2.2
+      :name: Circle#none
+    :score: 2.2
+    :path: /lib/om2ec/constructions/circle.rb
+    :highest_score: 2.2
+  - :average_score: 2.0
+    :scanned_methods: 
+    - :score: 2.0
+      :operators: 
+      - :operator: "  include"
+        :score: 2.0
+      :name: Plane#none
+    :score: 2.0
+    :path: /lib/om2ec/plane.rb
+    :highest_score: 2.0
+  - :average_score: 1.2
+    :scanned_methods: 
+    - :score: 1.2
+      :operators: 
+      - :operator: "  assignment"
+        :score: 1.2
+      :name: Configuration#initialize         lib/om2ec/constructions/configuration.rb:4
+    :score: 2.3
+    :path: /lib/om2ec/constructions/configuration.rb
+    :highest_score: 1.2
+  :average: 21.5
+  :total: 279.6
+:flay: 
+  :total_score: "54"
+  :matches: 
+  - :matches: 
+    - :name: lib/om2ec/point.rb
+      :line: "19"
+    - :name: lib/om2ec/point.rb
+      :line: "23"
+    - :name: lib/om2ec/point.rb
+      :line: "27"
+    :reason: 1) Similar code found in :defn (mass = 54)
+:reek: 
+  :matches: 
+  - :file_path: lib/om2ec.rb
+    :code_smells: []
+
+  - :file_path: lib/om2ec/constructable.rb
+    :code_smells: 
+    - :type: Duplication
+      :method: Constructable#retrieve_arguments
+      :message: calls expected_arguments twice
+    - :type: Uncommunicative Name
+      :method: Constructable#retrieve_arguments/block/block
+      :message: has the variable name 'x'
+    - :type: Nested Iterators
+      :method: Constructable#retrieve_arguments/block/block
+      :message: is nested
+    - :type: Duplication
+      :method: Constructable#retrieve_test
+      :message: calls expected_arguments twice
+    - :type: Uncommunicative Name
+      :method: Constructable#retrieve_test/block
+      :message: has the variable name 'x'
+    - :type: Uncommunicative Name
+      :method: Constructable#retrieve_test/block/block
+      :message: has the variable name 'y'
+    - :type: Nested Iterators
+      :method: Constructable#retrieve_test/block/block
+      :message: is nested
+  - :file_path: lib/om2ec/constructions/affine_point.rb
+    :code_smells: 
+    - :type: Uncommunicative Name
+      :method: AffinePoint#initialize
+      :message: has the variable name 'x'
+    - :type: Uncommunicative Name
+      :method: AffinePoint#initialize
+      :message: has the variable name 'y'
+    - :type: Uncommunicative Name
+      :method: AffinePoint#initialize
+      :message: has the variable name 'z'
+  - :file_path: lib/om2ec/constructions/circle.rb
+    :code_smells: []
+
+  - :file_path: lib/om2ec/constructions/configuration.rb
+    :code_smells: []
+
+  - :file_path: lib/om2ec/constructions/intersection_point.rb
+    :code_smells: []
+
+  - :file_path: lib/om2ec/constructions/midpoint.rb
+    :code_smells: []
+
+  - :file_path: lib/om2ec/constructions/normal_line.rb
+    :code_smells: 
+    - :type: Duplication
+      :method: NormalLine#initialize
+      :message: calls args[0] 3 times
+    - :type: Duplication
+      :method: NormalLine#initialize
+      :message: calls args[1] twice
+    - :type: Feature Envy
+      :method: NormalLine#initialize
+      :message: refers to args more than self
+  - :file_path: lib/om2ec/constructions/normal_plane.rb
+    :code_smells: []
+
+  - :file_path: lib/om2ec/constructions/parallel_line.rb
+    :code_smells: []
+
+  - :file_path: lib/om2ec/constructions/parallel_plane.rb
+    :code_smells: []
+
+  - :file_path: lib/om2ec/constructions/perpendicular_line.rb
+    :code_smells: []
+
+  - :file_path: lib/om2ec/constructions/point_on_line.rb
+    :code_smells: []
+
+  - :file_path: lib/om2ec/constructions/segment.rb
+    :code_smells: []
+
+  - :file_path: lib/om2ec/constructions/sphere.rb
+    :code_smells: []
+
+  - :file_path: lib/om2ec/constructions/symbolic_point.rb
+    :code_smells: []
+
+  - :file_path: lib/om2ec/definable.rb
+    :code_smells: 
+    - :type: Uncommunicative Name
+      :method: Definable#add_object/block
+      :message: has the variable name 'x'
+    - :type: Long Method
+      :method: Definable#self.included
+      :message: has approx 7 statements
+    - :type: Nested Iterators
+      :method: Definable#self.included/block/block
+      :message: is nested
+    - :type: Uncommunicative Name
+      :method: Definable::ClassMethods#definition/block
+      :message: has the variable name 'x'
+    - :type: Uncommunicative Name
+      :method: Definable::ClassMethods#definition/block/block
+      :message: has the variable name 'y'
+    - :type: Nested Iterators
+      :method: Definable::ClassMethods#definition/block/block
+      :message: is nested
+    - :type: Uncommunicative Name
+      :method: Definable::ClassMethods#definitions/block
+      :message: has the variable name 'd'
+  - :file_path: lib/om2ec/definable/definition.rb
+    :code_smells: 
+    - :type: Simulated Polymorphism
+      :method: Definable::ClassMethods::Definition
+      :message: tests complete? at least 3 times
+    - :type: Duplication
+      :method: Definable::ClassMethods::Definition#add_object
+      :message: calls object.is_a?(x) twice
+    - :type: Uncommunicative Name
+      :method: Definable::ClassMethods::Definition#add_object/block
+      :message: has the variable name 'x'
+  - :file_path: lib/om2ec/helpers/array.rb
+    :code_smells: 
+    - :type: Control Couple
+      :method: Array#delete_first
+      :message: is controlled by argument obj
+  - :file_path: lib/om2ec/helpers/number_generator.rb
+    :code_smells: []
+
+  - :file_path: lib/om2ec/line.rb
+    :code_smells: 
+    - :type: Feature Envy
+      :method: Line#normal_vector
+      :message: refers to i_point more than self
+    - :type: Duplication
+      :method: Line#vector
+      :message: calls first_point 3 times
+    - :type: Duplication
+      :method: Line#vector
+      :message: calls second_point 3 times
+  - :file_path: lib/om2ec/plane.rb
+    :code_smells: []
+
+  - :file_path: lib/om2ec/point.rb
+    :code_smells: 
+    - :type: Uncommunicative Name
+      :method: Point
+      :message: has the variable name '@x'
+    - :type: Uncommunicative Name
+      :method: Point
+      :message: has the variable name '@y'
+    - :type: Uncommunicative Name
+      :method: Point
+      :message: has the variable name '@z'
+    - :type: Simulated Polymorphism
+      :method: Point
+      :message: tests free? at least 3 times
+    - :type: Control Couple
+      :method: Point#initialize
+      :message: is controlled by argument numbered
+    - :type: Uncommunicative Name
+      :method: Point#x
+      :message: has the name 'x'
+    - :type: Uncommunicative Name
+      :method: Point#y
+      :message: has the name 'y'
+    - :type: Uncommunicative Name
+      :method: Point#z
+      :message: has the name 'z'
+    - :type: Nested Iterators
+      :method: Point/block/block
+      :message: is nested
+:rcov: 
+  lib/om2ec/constructions/midpoint.rb: 
+    :lines: 
+    - :content: "   class Midpoint < SymbolicPoint"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def initialize(*args)"
+      :was_run: true
+    - :content: "       @first_point, @second_point = retrieve_arguments(args)"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    :percent_run: 100
+  lib/om2ec/helpers/array.rb: 
+    :lines: 
+    - :content: "   class Array"
+      :was_run: true
+    - :content: "     def delete_first(obj = nil, &block)"
+      :was_run: true
+    - :content: "       index = if block"
+      :was_run: true
+    - :content: "                 self.index(&block)"
+      :was_run: true
+    - :content: "               elsif obj"
+      :was_run: true
+    - :content: "                 self.index(obj)"
+      :was_run: true
+    - :content: "               end"
+      :was_run: true
+    - :content: "       index.nil? ? nil : self.delete_at(index)"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    :percent_run: 100
+  lib/om2ec.rb: 
+    :lines: 
+    - :content: "   ROOT_DIR = File.join(File.dirname(__FILE__), 'om2ec')"
+      :was_run: true
+    - :content: "   CONSTRUCTIONS_DIR = File.join(ROOT_DIR, 'constructions')"
+      :was_run: true
+    - :content: "   DEFINABLE_DIR = File.join(ROOT_DIR, 'definable')"
+      :was_run: true
+    - :content: "   HELPERS_DIR = File.join(ROOT_DIR, 'helpers')"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "   autoload :Constructable, File.join(ROOT_DIR, 'constructable.rb')"
+      :was_run: true
+    - :content: "   autoload :Definable, File.join(ROOT_DIR, 'definable.rb')"
+      :was_run: true
+    - :content: "   autoload :Line, File.join(ROOT_DIR, 'line.rb')"
+      :was_run: true
+    - :content: "   autoload :Plane, File.join(ROOT_DIR, 'plane.rb')"
+      :was_run: true
+    - :content: "   autoload :Point, File.join(ROOT_DIR, 'point.rb')"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "   require File.join(HELPERS_DIR, 'array.rb')"
+      :was_run: true
+    - :content: "   autoload :NumberGenerator, File.join(HELPERS_DIR, 'number_generator.rb')"
+      :was_run: true
+    - :content: "   module Definable"
+      :was_run: true
+    - :content: "     module ClassMethods"
+      :was_run: true
+    - :content: "       autoload :Definition, File.join(DEFINABLE_DIR, 'definition.rb')"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "   autoload :SymbolicPoint, File.join(CONSTRUCTIONS_DIR, 'symbolic_point.rb')"
+      :was_run: true
+    - :content: "   autoload :AffinePoint, File.join(CONSTRUCTIONS_DIR, 'affine_point.rb')"
+      :was_run: true
+    - :content: "   autoload :Circle, File.join(CONSTRUCTIONS_DIR, 'circle.rb')"
+      :was_run: true
+    - :content: "   autoload :Configuration, File.join(CONSTRUCTIONS_DIR, 'configuration.rb')"
+      :was_run: true
+    - :content: "   autoload :IntersectionPoint, File.join(CONSTRUCTIONS_DIR, 'intersection_point.rb')"
+      :was_run: true
+    - :content: "   autoload :Midpoint, File.join(CONSTRUCTIONS_DIR, 'midpoint.rb')"
+      :was_run: true
+    - :content: "   autoload :NormalLine, File.join(CONSTRUCTIONS_DIR, 'normal_line.rb')"
+      :was_run: true
+    - :content: "   autoload :NormalPlane, File.join(CONSTRUCTIONS_DIR, 'normal_plane.rb')"
+      :was_run: true
+    - :content: "   autoload :ParallelLine, File.join(CONSTRUCTIONS_DIR, 'parallel_line.rb')"
+      :was_run: true
+    - :content: "   autoload :ParallelPlane, File.join(CONSTRUCTIONS_DIR, 'parallel_plane.rb')"
+      :was_run: true
+    - :content: "   autoload :PerpendicularLine, File.join(CONSTRUCTIONS_DIR, 'perpendicular_line.rb')"
+      :was_run: true
+    - :content: "   autoload :PointOnLine, File.join(CONSTRUCTIONS_DIR, 'point_on_line.rb')"
+      :was_run: true
+    - :content: "   autoload :Segment, File.join(CONSTRUCTIONS_DIR, 'segment.rb')"
+      :was_run: true
+    - :content: "   autoload :Sphere, File.join(CONSTRUCTIONS_DIR, 'sphere.rb')"
+      :was_run: true
+    :percent_run: 100
+  lib/om2ec/constructable.rb: 
+    :lines: 
+    - :content: "   module Constructable"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def self.included(base)"
+      :was_run: true
+    - :content: "       base.extend ClassMethods"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def retrieve_arguments(arguments)"
+      :was_run: true
+    - :content: "       if retrieve_test(arguments)"
+      :was_run: true
+    - :content: "         args = arguments.dup"
+      :was_run: true
+    - :content: "         expected_arguments.map{|klazz| args.delete_first{|x| x.is_a?(klazz)}}"
+      :was_run: true
+    - :content: "       else"
+      :was_run: true
+    - :content: "         raise ArgumentError, \"#{self.class} expects #{expected_arguments.join(', ')}, found #{arguments.map(&:class).join(', ')}\""
+      :was_run: true
+    - :content: "       end"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def retrieve_test(args)"
+      :was_run: true
+    - :content: "       expected = expected_arguments.dup"
+      :was_run: true
+    - :content: "       args.map(&:class).each{|x| expected.delete_first{|y| x.ancestors.include?(y)}}"
+      :was_run: true
+    - :content: "       expected.empty? && args.size == expected_arguments.size"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     protected"
+      :was_run: true
+    - :content: "     def expected_arguments"
+      :was_run: true
+    - :content: "       self.class.expected_arguments"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     module ClassMethods"
+      :was_run: true
+    - :content: "       def expected_arguments"
+      :was_run: true
+    - :content: "         @expected_arguments"
+      :was_run: true
+    - :content: "       end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "       def expected_arguments=(args)"
+      :was_run: true
+    - :content: "         @expected_arguments = args"
+      :was_run: true
+    - :content: "       end"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    :percent_run: 100
+  lib/om2ec/definable.rb: 
+    :lines: 
+    - :content: "   module Definable"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def self.included(base)"
+      :was_run: true
+    - :content: "       base.extend ClassMethods"
+      :was_run: true
+    - :content: "       base.instance_eval do"
+      :was_run: true
+    - :content: "         alias_method :initialize_without_definition, :initialize"
+      :was_run: true
+    - :content: "         alias_method :add_object_not_definable, :add_object if method_defined? :add_object"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "         define_method :initialize do |*args|"
+      :was_run: true
+    - :content: "           initialize_without_definition *args"
+      :was_run: true
+    - :content: "           @definitions = self.class.definitions(self)"
+      :was_run: true
+    - :content: "         end"
+      :was_run: true
+    - :content: "       end"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def add_object obj"
+      :was_run: true
+    - :content: "       if @definitions.map{|definition| definition.add(obj)}.any?{|x| !x.nil? }"
+      :was_run: true
+    - :content: "         object_dependencies << obj"
+      :was_run: true
+    - :content: "         obj.dependant_objects << self"
+      :was_run: true
+    - :content: "       end"
+      :was_run: true
+    - :content: "       self"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def object_dependencies"
+      :was_run: true
+    - :content: "       @object_dependencies ||= []"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def dependant_objects"
+      :was_run: true
+    - :content: "       @dependant_object ||= []"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def completed_by(definition)"
+      :was_run: true
+    - :content: "       unless @proper_definition"
+      :was_run: true
+    - :content: "         @proper_definition = definition"
+      :was_run: true
+    - :content: "         @internal_object = @proper_definition.generate"
+      :was_run: true
+    - :content: "       end"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     module ClassMethods"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "       def definition(args)"
+      :was_run: true
+    - :content: "         arguments = args.keys.detect{|x| x.is_a?(Array) && x.all?{|y| y.is_a?(Class)}}"
+      :was_run: true
+    - :content: "         target = args[arguments]"
+      :was_run: true
+    - :content: "         target.send :include, ::Constructable"
+      :was_run: true
+    - :content: "         target.expected_arguments = arguments.dup"
+      :was_run: true
+    - :content: "         self.add_definition(Definition.new(arguments,target))"
+      :was_run: true
+    - :content: "       end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "       def add_definition(definition)"
+      :was_run: true
+    - :content: "         self.instance_eval do"
+      :was_run: true
+    - :content: "           @definitions ||= []"
+      :was_run: true
+    - :content: "           @definitions << definition"
+      :was_run: true
+    - :content: "         end"
+      :was_run: true
+    - :content: "       end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "       def definitions(obj)"
+      :was_run: true
+    - :content: "         @definitions ||= []"
+      :was_run: true
+    - :content: "         @definitions.dup.each {|d| d.for_object(obj)}"
+      :was_run: true
+    - :content: "       end"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    :percent_run: 100
+  lib/om2ec/constructions/affine_point.rb: 
+    :lines: 
+    - :content: "   class AffinePoint < Point"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     attr_accessor :aff_x, :aff_y, :aff_z"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def initialize(x=0, y=0, z=0)"
+      :was_run: true
+    - :content: "       super()"
+      :was_run: true
+    - :content: "       @aff_x, @aff_y, @aff_z = x, y, z"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def free?"
+      :was_run: true
+    - :content: "       true"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def ==(other_point)"
+      :was_run: true
+    - :content: "       other_point.is_a?(AffinePoint) &&"
+      :was_run: true
+    - :content: "         other_point.aff_x == self.aff_x &&"
+      :was_run: true
+    - :content: "         other_point.aff_y == self.aff_y &&"
+      :was_run: true
+    - :content: "         other_point.aff_z == self.aff_z"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    :percent_run: 100
+  lib/om2ec/line.rb: 
+    :lines: 
+    - :content: "   class Line"
+      :was_run: true
+    - :content: "     include Definable"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     # We're supposed to have two points."
+      :was_run: true
+    - :content: "     def normal_vector a_point"
+      :was_run: true
+    - :content: "       i_point = IntersectionPoint.new(false)"
+      :was_run: true
+    - :content: "       i_point.add_object(self)"
+      :was_run: true
+    - :content: "       i_point.add_object(Plane.new.add_object(a_point).add_object(self))"
+      :was_run: true
+    - :content: "       i_point.to(a_point)"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def vector"
+      :was_run: true
+    - :content: "       @vector ||= [first_point.x_to(second_point),first_point.y_to(second_point),first_point.z_to(second_point)]"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    :percent_run: 100
+  lib/om2ec/definable/definition.rb: 
+    :lines: 
+    - :content: "   module Definable"
+      :was_run: true
+    - :content: "     module ClassMethods"
+      :was_run: true
+    - :content: "       class Definition"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "         def initialize(args, klazz)"
+      :was_run: true
+    - :content: "           @args_klazz, @result_klazz = args, klazz"
+      :was_run: true
+    - :content: "           @args = []"
+      :was_run: true
+    - :content: "         end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "         def add(object)"
+      :was_run: true
+    - :content: "           add_object(object) unless complete?"
+      :was_run: true
+    - :content: "         end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "         def complete?"
+      :was_run: true
+    - :content: "           @args_klazz.empty?"
+      :was_run: true
+    - :content: "         end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "   \t\t\t\t\t\tdef for_object(obj)"
+      :was_run: true
+    - :content: !binary |
+        ICAgCQkJCQkJCQlAb3duZXIgPSBvYmo=
+
+      :was_run: true
+    - :content: !binary |
+        ICAgCQkJCQkJCQlzZWxm
+
+      :was_run: true
+    - :content: !binary |
+        ICAgCQkJCQkJZW5k
+
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "   \t\t\t\t\t\tdef generate"
+      :was_run: true
+    - :content: !binary |
+        ICAgCQkJCQkJCQlpZiBjb21wbGV0ZT8=
+
+      :was_run: true
+    - :content: "   \t\t\t\t\t\t\t\t\t\t@generated ||= @result_klazz.new(*@args)"
+      :was_run: true
+    - :content: !binary |
+        ICAgCQkJCQkJCQllbmQ=
+
+      :was_run: true
+    - :content: !binary |
+        ICAgCQkJCQkJZW5k
+
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "         private"
+      :was_run: true
+    - :content: "         def add_object(object)"
+      :was_run: true
+    - :content: "           if @args_klazz.any? {|x| object.is_a?(x)}"
+      :was_run: true
+    - :content: "             @args << object"
+      :was_run: true
+    - :content: "             @args_klazz.delete_first {|x| object.is_a?(x)}"
+      :was_run: true
+    - :content: "   \t\t\t\t\t\t\t\t\t\t@owner.completed_by(self) if complete?"
+      :was_run: true
+    - :content: "             object"
+      :was_run: true
+    - :content: "           end"
+      :was_run: true
+    - :content: "         end"
+      :was_run: true
+    - :content: "       end"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    :percent_run: 100
+  lib/om2ec/constructions/normal_line.rb: 
+    :lines: 
+    - :content: "   class NormalLine < Line"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "   \t\tattr_accessor :plane, :point"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "   \t\tdef initialize(*args)"
+      :was_run: true
+    - :content: "   \t\t\t\t@plane, @point =\t\tif args[0].is_a?(Plane)"
+      :was_run: true
+    - :content: !binary |
+        ICAgCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJW2FyZ3NbMF0sIGFyZ3NbMV1d
+
+      :was_run: false
+    - :content: !binary |
+        ICAgCQkJCQkJCQkJCQkJCQkJCQkJCQkJCWVsc2U=
+
+      :was_run: true
+    - :content: !binary |
+        ICAgCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJW2FyZ3NbMV0sIGFyZ3NbMF1d
+
+      :was_run: true
+    - :content: !binary |
+        ICAgCQkJCQkJCQkJCQkJCQkJCQkJCQkJCWVuZA==
+
+      :was_run: true
+    - :content: "   \t\tend"
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    :percent_run: 92
+  lib/om2ec/constructions/parallel_line.rb: 
+    :lines: 
+    - :content: "   class ParallelLine < Line"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def initialize(*args)"
+      :was_run: true
+    - :content: "       @point, @line = retrieve_arguments(args)"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    :percent_run: 100
+  lib/om2ec/helpers/number_generator.rb: 
+    :lines: 
+    - :content: "   require 'singleton'"
+      :was_run: true
+    - :content: "   class NumberGenerator"
+      :was_run: true
+    - :content: "     include Singleton"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def initialize"
+      :was_run: true
+    - :content: "       @number = 0"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def succ"
+      :was_run: true
+    - :content: "       @number = @number.succ"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def self.succ"
+      :was_run: true
+    - :content: "       instance.succ"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    :percent_run: 100
+  lib/om2ec/constructions/symbolic_point.rb: 
+    :lines: 
+    - :content: "   class SymbolicPoint < Point"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def free?"
+      :was_run: true
+    - :content: "       false"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    :percent_run: 100
+  lib/om2ec/constructions/intersection_point.rb: 
+    :lines: 
+    - :content: "   class IntersectionPoint < SymbolicPoint"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    :percent_run: 100
+  lib/om2ec/plane.rb: 
+    :lines: 
+    - :content: "   class Plane"
+      :was_run: true
+    - :content: "     include Definable"
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    :percent_run: 100
+  :global_percent_run: 99.7
+  lib/om2ec/point.rb: 
+    :lines: 
+    - :content: "   class Point"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     attr_reader :variable_id"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def initialize(numbered=true)"
+      :was_run: true
+    - :content: "       if numbered"
+      :was_run: true
+    - :content: "         @variable_id = NumberGenerator.succ"
+      :was_run: true
+    - :content: "       end"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def bound?"
+      :was_run: true
+    - :content: "       !free?"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def free?"
+      :was_run: true
+    - :content: "       false"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def x"
+      :was_run: true
+    - :content: "       @x ||= \"x#{variable_id}\".send((free?) ? :upcase : :downcase)"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def y"
+      :was_run: true
+    - :content: "       @y ||= \"y#{variable_id}\".send((free?) ? :upcase : :downcase)"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def z"
+      :was_run: true
+    - :content: "       @z ||= \"z#{variable_id}\".send((free?) ? :upcase : :downcase)"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     %w{x y z}.each do |var|"
+      :was_run: true
+    - :content: "       define_method \"#{var}_to\" do |point|"
+      :was_run: true
+    - :content: "         \"(#{self.send(var)}-#{point.send(var)})\""
+      :was_run: true
+    - :content: "       end"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def to_vector"
+      :was_run: true
+    - :content: "       @vector ||= [x, y, z]"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     def to(a_point)"
+      :was_run: true
+    - :content: "       [x_to(a_point), y_to(a_point), z_to(a_point)]"
+      :was_run: true
+    - :content: "     end"
+      :was_run: true
+    - :content: "   "
+      :was_run: true
+    - :content: "     include Definable"
+      :was_run: true
+    - :content: "   end"
+      :was_run: true
+    :percent_run: 100
+:roodi: 
+  :total: 
+  - Found 0 errors.
+  :problems: []
+

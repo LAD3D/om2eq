@@ -4,6 +4,10 @@ module Definable
 
       def initialize(args, klazz)
         @args_klazz, @result_klazz = args, klazz
+        unless klazz.ancestors.include?(::Constructable)
+          klazz.send :include, ::Constructable
+          klazz.expected_arguments = @args_klazz
+        end
         @args = []
       end
 
@@ -15,23 +19,23 @@ module Definable
         @args_klazz.empty?
       end
 
-						def for_object(obj)
-								@owner = obj
-								self
-						end
+      def for_object(obj)
+        @owner = obj
+        self
+      end
 
-						def generate
-								if complete?
-										@generated ||= @result_klazz.new(*@args)
-								end
-						end
+      def generate
+        if complete?
+          @generated ||= @result_klazz.new(*@args)
+        end
+      end
 
       private
       def add_object(object)
         if @args_klazz.any? {|x| object.is_a?(x)}
           @args << object
           @args_klazz.delete_first {|x| object.is_a?(x)}
-										@owner.completed_by(self) if complete?
+					@owner.completed_by(self) if complete?
           object
         end
       end

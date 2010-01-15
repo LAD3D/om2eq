@@ -30,7 +30,8 @@ module Constructable
     end
 
     def expected_arguments=(args)
-      @expected_arguments = args
+      @expected_arguments = args.dup
+      @expected_arguments.freeze # DO NOT REMOVE. SOMEHOW IT IS GETTING MODIFIED AND SOME SPECS FAIL. THIS IS THE ONLY SOLUTION I HAVE FOUND
     end
   end
 end
