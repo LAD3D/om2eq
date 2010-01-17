@@ -1,8 +1,8 @@
+# NormalLine represents the normal line of a plane going through
+# a point.
 class NormalLine < Line
 
-  attr_accessor :plane, :point
-
   def initialize(*args)
-    @plane, @point =		retrieve_arguments(args)
+    plane, @first_point = retrieve_arguments(args)
   end
 end

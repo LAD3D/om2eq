@@ -1,6 +1,15 @@
 class Line
   include Definable
 
+  attr_reader :first_point, :second_point
+
+  # Definitions
+  definition [Plane, Point] => NormalLine
+  definition [Line, Point] => ParallelLine
+  definition [Point, Point] => Segment
+  definition [Plane, Plane] => IntersectionLine
+
+
   # We're supposed to have two points.
   def normal_vector a_point
     i_point = IntersectionPoint.new()
