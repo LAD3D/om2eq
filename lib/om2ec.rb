@@ -8,6 +8,7 @@ autoload :Definable, File.join(ROOT_DIR, 'definable.rb')
 autoload :Line, File.join(ROOT_DIR, 'line.rb')
 autoload :Plane, File.join(ROOT_DIR, 'plane.rb')
 autoload :Point, File.join(ROOT_DIR, 'point.rb')
+autoload :Scope, File.join(ROOT_DIR, 'scope.rb')
 
 require File.join(HELPERS_DIR, 'array.rb')
 autoload :NumberGenerator, File.join(HELPERS_DIR, 'number_generator.rb')
