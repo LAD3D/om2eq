@@ -4,6 +4,16 @@ require 'om2ec'
 require 'spec'
 require 'spec/autorun'
 
+ASSETS_DIR = File.join(File.dirname(__FILE__), 'assets')
+
+class << ASSETS_DIR
+  Dir.glob(File.join(ASSETS_DIR, '**', '*.xml')).each do |file|
+     define_method file.gsub(ASSETS_DIR+File::SEPARATOR, '').gsub(File::SEPARATOR, '_').gsub('.xml', '') do
+       file
+     end
+  end
+end
+
 Spec::Runner.configure do |config|
   
 end
