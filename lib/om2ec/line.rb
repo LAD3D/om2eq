@@ -4,8 +4,8 @@ class Line
   attr_reader :first_point, :second_point
 
   # Definitions
-  definition [Plane, Point] => NormalLine
-  definition [Line, Point] => ParallelLine
+  definition [Plane, Point] => NormalLine, :tag => :normal
+  definition [Line, Point] => ParallelLine, :tag => :parallel
   definition [Point, Point] => Segment
   definition [Plane, Plane] => IntersectionLine
 

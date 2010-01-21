@@ -2,8 +2,9 @@ module Definable
   module ClassMethods
     class Definition
 
-      def initialize(args, klazz)
+      def initialize(args, klazz, tags=[])
         @args_klazz, @result_klazz = args, klazz
+        @tags = (tags.is_a?(Array)) ? tags : [tags]
         unless klazz.ancestors.include?(::Constructable)
           klazz.send :include, ::Constructable
           klazz.expected_arguments = @args_klazz
@@ -28,6 +29,10 @@ module Definable
         if complete?
           @generated ||= @result_klazz.new(*@args)
         end
+      end
+
+      def tagged_as?(*tags)
+        tags.size > 0 && tags.all?{|t| @tags.include?(t)}
       end
 
       private

@@ -41,11 +41,12 @@ module Definable
   module ClassMethods
 
     def definition(args)
-      arguments = args.keys.detect{|x| x.is_a?(Array) && x.all?{|y| y.is_a?(Class)}}
+      arguments = args.keys.detect{|x| x.is_a?(Array) && x.all?{|y| y.is_a?(Class) || y.is_a?(Symbol)}}
       target = args[arguments]
+      tags = args[:tag]
       target.send :include, ::Constructable
       target.expected_arguments = arguments.dup
-      self.add_definition(Definition.new(arguments,target))
+      self.add_definition(Definition.new(arguments,target, tags))
     end
 
     def add_definition(definition)
