@@ -2,6 +2,16 @@
 
 <OMOBJ xmlns="http://www.openmath.org/OpenMath" version="2.0">
   <OMA>
+    <OMS cd="3Dgeo1" name="line"/>
+    <OMV name="l"/>
+  </OMA>
+
+  <OMA>
+    <OMS cd="3Dgeo1" name="line"/>
+    <OMV name="m"/>
+  </OMA>
+
+  <OMA>
     <OMS cd="3Dgeo1" name="point"/>
     <OMV name="A"/>
     <OMA>

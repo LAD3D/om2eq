@@ -20,17 +20,23 @@ class Parser
 
   def get_variables
     nodes = @xml.xpath("//descendant::xmlns:OMA/xmlns:OMS[attribute::cd='3Dgeo1']")
-    @vars = {}
     nodes.each do |node|
-      @vars[node.next["name"]] = @variable_types[node["name"].to_sym]
+      scope.add(node.next["name"], @variable_types[node["name"].to_sym])
     end
   end
 
   def restrict_objects
-
+    nodes = @xml.xpath("//descendant::xmlns:OMA/xmlns:OMS[attribute::cd='3Dgeo2']")
+    nodes.each do |node|
+      scope.send node["name"].to_sym, node
+    end
   end
 
   def generate_equations
     
+  end
+
+  def scope
+    @scope ||= Scope.new
   end
 end

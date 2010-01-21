@@ -5,26 +5,24 @@ describe Parser do
     @parser = Parser.new(ASSETS_DIR.intersection_point)
   end
 
-  it "should call get_variables when parsing" do
-    @parser.should_receive(:get_variables).once
+  it "should generete only one scope" do
+    scope = Scope.new
+    Scope.should_receive(:new).once.and_return(scope)
     @parser.parse
   end
 
-  it "should call restrict_objects when parsing" do
-    @parser.should_receive(:restrict_objects).once
-    @parser.parse
-  end
-
-  it "should call generate_equations when parsing" do
-    @parser.should_receive(:generate_equations).once
+  it "should call get_variables, restrict_objects and generate_equations when parsing" do
+    [:get_variables, :restrict_objects, :generate_equations].each do |m|
+      @parser.should_receive(m).once
+    end
     @parser.parse
   end
 
   describe "#get_variables" do
 
     it "should get a point in intersection point example" do
-      @parser.parse
-      @parser.instance_variable_get("@vars")["A"].should == Point
+      @parser.get_variables
+      @parser.scope[:A].should be_a(Point)
     end
   end
 end

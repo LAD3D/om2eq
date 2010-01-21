@@ -13,10 +13,12 @@ module Definable
     end
   end
 
-  def add_object obj
+  def add_object obj, internal_call = false
     if @definitions.map{|definition| definition.add(obj)}.any?{|x| !x.nil? }
       object_dependencies << obj
       obj.dependant_objects << self
+    elsif internal_call
+      obj.add_object self, true
     end
     self
   end

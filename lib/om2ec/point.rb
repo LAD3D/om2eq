@@ -35,4 +35,6 @@ class Point
   end
 
   include Definable
+  
+  definition [Point, Point] => Midpoint
 end

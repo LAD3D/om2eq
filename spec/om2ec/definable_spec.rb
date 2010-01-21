@@ -5,7 +5,7 @@ describe Definable do
     @class = Class.new
     @class.send :include, Definable
     @class.definition [Point, Point] => Midpoint
-				@class.definition [Point, Line] => ParallelLine
+		@class.definition [Point, Line] => ParallelLine
     @definable = @class.new
     [@class, @definable].each do |var|
       def var.definitions
@@ -79,6 +79,11 @@ describe Definable do
 
   it "should force the target to include Constructable" do
     Midpoint.should include(::Constructable)
+  end
+
+  it "should call add_object in the parameter if there is no definition" do
+    @definable.should_receive(:add_object).once.with(@definable)
+    @definable.add_object @definable
   end
 end
 
