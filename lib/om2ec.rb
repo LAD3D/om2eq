@@ -37,3 +37,5 @@ autoload :PerpendicularLine, File.join(CONSTRUCTIONS_DIR, 'perpendicular_line.rb
 autoload :PointOnLine, File.join(CONSTRUCTIONS_DIR, 'point_on_line.rb')
 autoload :Segment, File.join(CONSTRUCTIONS_DIR, 'segment.rb')
 autoload :Sphere, File.join(CONSTRUCTIONS_DIR, 'sphere.rb')
+
+Point
