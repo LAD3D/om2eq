@@ -5,7 +5,8 @@ describe Definable do
     @class = Class.new
     @class.send :include, Definable
     @class.definition [Point, Point] => Midpoint
-		@class.definition [Point, Line] => ParallelLine
+		@class.definition [Point, Line] => ParallelLine, :tagged_as => :parallel
+    @class.definition [Point, Line] => PerpendicularLine, :tagged_as => :perpendicular
     @definable = @class.new
     [@class, @definable].each do |var|
       def var.definitions
@@ -85,5 +86,6 @@ describe Definable do
     @definable.should_receive(:add_object).once.with(@definable)
     @definable.add_object @definable
   end
+
 end
 
