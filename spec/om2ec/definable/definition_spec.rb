@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 module Definable
 
   module ClassMethods
-    describe Definition do
+    describe Definable::ClassMethods::Definition do
       before(:each) do
         @result_class = NormalLine
         @definition = Definition.new([Plane, Point], NormalLine)

@@ -39,3 +39,5 @@ autoload :Segment, File.join(CONSTRUCTIONS_DIR, 'segment.rb')
 autoload :Sphere, File.join(CONSTRUCTIONS_DIR, 'sphere.rb')
 
 Point
+Line
+Plane

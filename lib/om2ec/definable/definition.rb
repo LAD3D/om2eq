@@ -30,7 +30,37 @@ module Definable
         end
       end
 
+      class << self
+
+        def from_args(arguments)
+          args = parse_args(arguments)
+          target = arguments[args]
+          target.send :include, ::Constructable
+          target.expected_arguments = args.dup
+          self.new(args,target)
+        end
+
+        private
+
+        def can_be_an_arg?(arg)
+          can_be_a_simple_arg?(arg) || can_be_a_tagged_arg?(arg)
+        end
+
+        def can_be_a_simple_arg?(arg)
+          arg.is_a?(Class)
+        end
+
+        def can_be_a_tagged_arg?(arg)
+          arg.is_a?(Array) && arg[0].is_a?(Class) && arg[1].is_a?(Symbol)
+        end
+
+        def parse_args(arguments)
+          arguments.keys.detect{|x| x.is_a?(Array) && x.all?{|y| can_be_an_arg?(y)}}
+        end
+      end
+
       private
+
       def add_object(object)
         if @args_klazz.any? {|x| object.is_a?(x)}
           @args << object
