@@ -41,10 +41,10 @@ module Definable
           self.new(args,target)
         end
 
-        private
+        protected
 
         def can_be_an_arg?(arg)
-          can_be_a_simple_arg?(arg) || can_be_a_tagged_arg?(arg)
+          self.can_be_a_simple_arg?(arg) || self.can_be_a_tagged_arg?(arg)
         end
 
         def can_be_a_simple_arg?(arg)

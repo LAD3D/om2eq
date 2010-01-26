@@ -66,6 +66,22 @@ module Definable
         @definition.generate.should be_nil
       end
 
+      it "should consider both simple and tagged arguments as arguments" do
+        Definition.should_receive(:can_be_a_simple_arg?).and_return(false)
+        Definition.should_receive(:can_be_a_tagged_arg?).and_return(true)
+        Definition.send :can_be_an_arg?, [@result_class, :tag]
+      end
+
+      it "should consider a class an arg" do
+        Definition.send(:can_be_an_arg?, @result_class).should == true
+        Definition.send(:can_be_an_arg?, Class.new).should == true
+      end
+
+      it "should consider a class plus a tag an arg" do
+        Definition.send(:can_be_an_arg?, [@result_class, :tag]).should == true
+        Definition.send(:can_be_an_arg?, [Class.new, :tag]).should == true
+      end
+
       # Methods
       def add_to_definition(definition, *classes)
         classes.each do |klazz|
