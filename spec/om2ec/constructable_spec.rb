@@ -5,16 +5,17 @@ describe Constructable do
     @class =  Class.new do
                 include Constructable
               end
-    @class.expected_arguments = [String, Fixnum]
+    @expected_arguments = [String, [Fixnum, :fixnum]]
+    @class.expected_arguments = @expected_arguments
     @fail_args = ["hola", "adios"]
-    @win_args = [2, "dos"]
+    @win_args = [[2, :fixnum], "dos"]
     @instance = @class.new
   end
 
   after(:each) do
-    @class.expected_arguments.should == [String, Fixnum]
+    @class.expected_arguments.should == @expected_arguments
     @fail_args.should == ["hola", "adios"]
-    @win_args.should == [2, "dos"]
+    @win_args.should == [[2, :fixnum], "dos"]
   end
 
   describe "#retrieve_arguments" do
@@ -61,8 +62,8 @@ describe Constructable do
     it "should pass even with subclasses" do
       klazz1, klazz2 = Class.new, Class.new
       @class.expected_arguments = [klazz2, klazz1]
-      @instance.retrieve_test([klazz1.new, klazz2.new]).should == true
-      @class.expected_arguments = [String, Fixnum]
+      @instance.retrieve_test([Class.new(klazz1).new, Class.new(klazz2).new]).should == true
+      @class.expected_arguments = @expected_arguments
     end
   end
 end
