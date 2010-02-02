@@ -4,8 +4,9 @@ class Line
   attr_reader :first_point, :second_point
 
   # Definitions
-  definition [Plane, Point] => NormalLine, :tag => :normal
-  definition [Line, Point] => ParallelLine, :tag => :parallel
+  definition [[Plane, :normal], Point] => NormalLine
+  definition [[Line, :parallel], Point] => ParallelLine
+  definition [[Line, :perpendicular], Point] => PerpendicularLine
   definition [Point, Point] => Segment
   definition [Plane, Plane] => IntersectionLine
 
@@ -14,11 +15,12 @@ class Line
   def normal_vector a_point
     i_point = IntersectionPoint.new()
     i_point.add_object(self)
-    i_point.add_object(Plane.new.add_object(a_point).add_object(self))
-    i_point.to(a_point)
+    plane = Plane.new#.add_object(a_point).add_object([self, :normal])
+#    i_point.add_object(plane)
+#    Vector.new i_point, a_point
   end
 
   def vector
-    @vector ||= [first_point.x_to(second_point),first_point.y_to(second_point),first_point.z_to(second_point)]
+    @vector ||= Vector.new(first_point, second_point)
   end
 end

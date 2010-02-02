@@ -63,10 +63,24 @@ module Definable
       private
 
       def add_object(object)
-        if @args_klazz.any? {|x| object.is_a?(x)}
-          @args << object
-          @args_klazz.delete_first {|x| object.is_a?(x)}
+        if @args_klazz.any? {|x| coerceable?(object,x)}
+          @args << get_actual_object(object)
+          @args_klazz.delete_first {|x| coerceable?(object, x)}
 					@owner.completed_by(self) if complete?
+          get_actual_object(object)
+        end
+      end
+
+      def coerceable?(object, arg)
+        (arg.is_a?(Module) && object.is_a?(arg)) ||
+          (arg.is_a?(Array) && object.is_a?(Array) && arg[0].is_a?(Module) &&
+            object[0].is_a?[arg[0]] && arg[1] == object[1])
+      end
+
+      def get_actual_object(object)
+        if object.is_a? Array
+          object[0]
+        else
           object
         end
       end
