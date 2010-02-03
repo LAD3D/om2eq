@@ -21,14 +21,23 @@ class Scope
     @store ||= {}
   end
 
+  def incidences
+    @incidences ||= Hash.new([])
+  end
+
   def incident(node)
     first, second = self[node.next["name"]], self[node.next.next["name"]]
     first.add_object second
+    if first.is_a?(Point)
+      incidences[first] << second
+    elsif second.is_a?(Point)
+      incidences[second] << first
+    end
   end
 
   def is_midpoint(node)
     self[node.next["name"]].add_object self[node.next.next["name"]]
-    self[node.next["name"]].add_object self[node.next["name"]]
+    self[node.next["name"]].add_object self[node.next.next.next["name"]]
   end
 
   def circle_center(node)
