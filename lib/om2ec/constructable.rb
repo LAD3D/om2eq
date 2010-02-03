@@ -7,7 +7,8 @@ module Constructable
   def retrieve_arguments(arguments)
     if retrieve_test(arguments)
       args = arguments.dup
-      expected_arguments.map{|exp_arg| args.delete_first{|x| arg_match_generic_arg(x, exp_arg)}}
+      expected_arguments.map{|exp_arg| args.delete_first{|x| arg_match_generic_arg(x, exp_arg)}}.
+        map{|x| (x.is_a?(Array) ? x[0] : x)}
     else
       raise ArgumentError, "#{self.class} expects #{expected_arguments.join(', ')}, found #{arguments.map(&:class).join(', ')}"
     end

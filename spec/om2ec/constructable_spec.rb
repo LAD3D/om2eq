@@ -5,17 +5,17 @@ describe Constructable do
     @class =  Class.new do
                 include Constructable
               end
-    @expected_arguments = [String, [Fixnum, :fixnum]]
+    @expected_arguments = [String, [Fixnum, :fixnum], [Fixnum, :another]]
     @class.expected_arguments = @expected_arguments
     @fail_args = ["hola", "adios"]
-    @win_args = [[2, :fixnum], "dos"]
+    @win_args = [[2, :fixnum], "dos", [3, :another]]
     @instance = @class.new
   end
 
   after(:each) do
     @class.expected_arguments.should == @expected_arguments
     @fail_args.should == ["hola", "adios"]
-    @win_args.should == [[2, :fixnum], "dos"]
+    @win_args.should == [[2, :fixnum], "dos", [3, :another]]
   end
 
   describe "#retrieve_arguments" do
@@ -41,9 +41,10 @@ describe Constructable do
     end
 
     it "should return the arguments in the correct order" do
-      string, fixnum = @instance.retrieve_arguments(@win_args)
+      string, fixnum, another = @instance.retrieve_arguments(@win_args)
       string.should == @win_args[1]
-      fixnum.should == @win_args[0]
+      fixnum.should == @win_args[0][0]
+      another.should == @win_args[2][0]
     end
   end
 

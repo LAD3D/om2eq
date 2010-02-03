@@ -64,7 +64,7 @@ module Definable
 
       def add_object(object)
         if @args_klazz.any? {|x| coerceable?(object,x)}
-          @args << get_actual_object(object)
+          @args << object
           @args_klazz.delete_first {|x| coerceable?(object, x)}
 					@owner.completed_by(self) if complete?
           get_actual_object(object)
