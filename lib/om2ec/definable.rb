@@ -32,6 +32,12 @@ module Definable
     @dependant_object ||= []
   end
 
+  def complete?
+    #TODO Mirar definición de completo para puntos.
+    #TODO completo es o punto afín o objecto definido con parámetros completos.
+    @proper_definition
+  end
+
   def completed_by(definition)
     unless @proper_definition
       @proper_definition = definition

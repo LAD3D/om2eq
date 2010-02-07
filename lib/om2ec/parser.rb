@@ -16,6 +16,7 @@ class Parser
     get_variables
     restrict_objects
     generate_equations
+    self
   end
 
   def get_variables

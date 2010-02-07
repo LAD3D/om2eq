@@ -14,6 +14,19 @@ describe Scope do
     @scope["Q"].should be_a(klazz2)
   end
 
+  it "should add itself as scope" do
+    klazz = Class.new
+    @scope.add(:P, klazz)
+    @scope["P"].scope.should == @scope
+  end
+
+  it "should include InScope module to the class if it does not include it yet" do
+    klazz = Class.new
+    lambda{
+      @scope.add(:P, klazz)
+    }.should_not raise_error
+  end
+
   it "should fail if defining same variable with different class" do
     @scope.add(:P, Point)
     lambda{

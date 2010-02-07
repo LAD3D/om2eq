@@ -35,6 +35,7 @@ class Point
   end
 
   include Definable
+  include InScope
   
   definition [Point, Point] => Midpoint
 end

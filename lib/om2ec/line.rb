@@ -1,5 +1,6 @@
 class Line
   include Definable
+  include InScope
 
   attr_reader :first_point, :second_point
 

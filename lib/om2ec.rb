@@ -7,6 +7,7 @@ HELPERS_DIR = File.join(ROOT_DIR, 'helpers')
 
 autoload :Constructable, File.join(ROOT_DIR, 'constructable.rb')
 autoload :Definable, File.join(ROOT_DIR, 'definable.rb')
+autoload :InScope, File.join(ROOT_DIR, 'in_scope.rb')
 autoload :Line, File.join(ROOT_DIR, 'line.rb')
 autoload :Parser, File.join(ROOT_DIR, 'parser.rb')
 autoload :Plane, File.join(ROOT_DIR, 'plane.rb')

@@ -1,12 +1,14 @@
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
+# Scope cambio con métodos.
 
 class Scope
 
   def add name, klazz
     obj = self[name]
     if obj.nil?
-      store[name.to_sym] = klazz.new
+      klazz.send :include, InScope unless klazz.include?(InScope)
+      inst = klazz.new
+      inst.scope = self
+      store[name.to_sym] = inst
     elsif !obj.is_a?(klazz)
       raise ArgumentError, "#{name} was defined twice, first as #{obj.class} and then as #{klazz}"
     end
