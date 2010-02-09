@@ -18,6 +18,24 @@ Spec::Runner.configure do |config|
   
 end
 
+Spec::Matchers.define :contain do |value|
+  match do |container|
+    container.respond_to?(:contains?) && container.contains?(value)
+  end
+
+  failure_message_for_should do |container|
+    "expected #{container} to contain value #{value}"
+  end
+
+  failure_message_for_should_not do |container|
+    "expected #{container} not to contain value #{value}"
+  end
+
+  description do
+    "expect a container of #{value}"
+  end
+end
+
 shared_examples_for "a bound point" do
   
   it "should be bound" do

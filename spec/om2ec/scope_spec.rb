@@ -33,5 +33,17 @@ describe Scope do
       @scope.add(:P, Line)
     }.should raise_error
   end
+
+  describe "#contains?" do
+
+    it "should check both auxiliar and store" do
+      obj1 = Class.new.new
+      obj2 = Class.new.new
+      @scope.send(:store)[:P] = obj1
+      @scope.auxiliar << obj2
+      @scope.should contain(obj1)
+      @scope.should contain(obj2)
+    end
+  end
 end
 

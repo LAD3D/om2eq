@@ -18,6 +18,14 @@ class Scope
     store[name.to_sym]
   end
 
+  def contains?(value)
+    auxiliar.include?(value) || store.value?(value)
+  end
+
+  def auxiliar
+    @auxiliar ||= []
+  end
+
   protected
   def store
     @store ||= {}

@@ -12,5 +12,13 @@ describe InScope do
     @instance.should respond_to(:scope)
     @instance.should respond_to(:scope=)
   end
+
+  describe "#scope=" do
+    it "should add self to scope" do
+      s = Scope.new
+      @instance.scope = s
+      s.should contain(@instance)
+    end
+  end
 end
 
