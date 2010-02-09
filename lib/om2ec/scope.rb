@@ -18,6 +18,10 @@ class Scope
     store[name.to_sym]
   end
 
+  def points
+    auxiliar.select{|obj| obj.is_a?(Point)} | store.values.select{|obj| obj.is_a?(Point)}
+  end
+
   def contains?(value)
     auxiliar.include?(value) || store.value?(value)
   end

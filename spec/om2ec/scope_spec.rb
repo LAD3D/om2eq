@@ -34,6 +34,26 @@ describe Scope do
     }.should raise_error
   end
 
+  describe "#points"do
+
+    it "should take the points from both auxiliar and store" do
+      obj1 = Class.new.new
+      obj2 = Class.new.new
+      obj3 = Class.new.new
+      p1 = Class.new(Point).new
+      p2 = Class.new(Point).new
+      store = @scope.send(:store)
+      store["P"] = p1; store["l"] = obj2; store["m"] = obj3
+      @scope.auxiliar << obj1; @scope.auxiliar << p2
+      points = @scope.points
+      points.should include(p1)
+      points.should include(p2)
+      points.should_not include(obj1)
+      points.should_not include(obj2)
+      points.should_not include(obj3)
+    end
+  end
+
   describe "#contains?" do
 
     it "should check both auxiliar and store" do
