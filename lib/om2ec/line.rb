@@ -21,6 +21,14 @@ class Line
     Vector.new i_point, a_point
   end
 
+  def for(p)
+      "A#{p.x}+B#{p.y}+C#{p.z}+D"
+  end
+
+  def inspect
+    "Line"
+  end
+
   def vector
     @vector ||= Vector.new(first_point, second_point)
   end

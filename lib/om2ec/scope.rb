@@ -19,7 +19,9 @@ class Scope
   end
 
   def points
-    auxiliar.select{|obj| obj.is_a?(Point)} | store.values.select{|obj| obj.is_a?(Point)}
+    (auxiliar.select{|obj| obj.is_a?(Point)} | store.values.select{|obj| obj.is_a?(Point)}).sort do |a,b|
+      a.variable_id <=> b.variable_id
+    end
   end
 
   def contains?(value)
@@ -30,22 +32,30 @@ class Scope
     @auxiliar ||= []
   end
 
+  def equations
+    eqs = []
+    incidences.each_pair do |point, cons|
+      cons.each{|x| eqs << x.for(point)}
+    end
+    eqs
+  end
+
   protected
   def store
     @store ||= {}
   end
 
   def incidences
-    @incidences ||= Hash.new([])
+    @incidences ||= {}
   end
 
   def incident(node)
     first, second = self[node.next["name"]], self[node.next.next["name"]]
     first.add_object second
     if first.is_a?(Point)
-      incidences[first] << second
+      (incidences[first] ||= []) << second
     elsif second.is_a?(Point)
-      incidences[second] << first
+      (incidences[second] ||= []) << first
     end
   end
 

@@ -12,10 +12,9 @@ class Parser
        }
   end
 
-  def parse
+  def parse!
     get_variables
     restrict_objects
-    generate_equations
     self
   end
 
@@ -33,8 +32,12 @@ class Parser
     end
   end
 
-  def generate_equations
-    
+  def equations
+    @equations ||= scope.equations.join(';')
+  end
+
+  def points
+    @points ||= scope.points.map{|p| p.inspect}.join(',') #TODO Change to an appropriate repr.
   end
 
   def scope

@@ -34,6 +34,10 @@ class Point
     [x_to(a_point), y_to(a_point), z_to(a_point)]
   end
 
+  def inspect
+    "Point#{variable_id}"
+  end
+
   include Definable
   include InScope
   
