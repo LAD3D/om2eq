@@ -35,7 +35,7 @@ class Point
   end
 
   def inspect
-    "Point#{variable_id}"
+    to_vector.join(',')
   end
 
   include Definable

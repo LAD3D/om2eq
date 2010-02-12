@@ -25,4 +25,13 @@
       <OMV name="m"/>
     </OMA>
   </OMA>
+  <OMA>
+    <OMS cd="3Dgeo1" name="point"/>
+    <OMV name="B"/>
+    <OMA>
+      <OMS cd="3Dgeo2" name="incident"/>
+      <OMV name="B"/>
+      <OMV name="m"/>
+    </OMA>
+  </OMA>
 </OMOBJ>
