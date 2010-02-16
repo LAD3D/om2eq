@@ -18,6 +18,9 @@ class Parser
     self
   end
 
+  # All variable names are declared after a OMS node containing
+  # one type declared in 3Dgeo1. node contains the node whose name
+  # attribute is the type. node.next's name attr is the variable name.
   def get_variables
     nodes = @xml.xpath("//descendant::xmlns:OMA/xmlns:OMS[attribute::cd='3Dgeo1']")
     nodes.each do |node|
@@ -25,6 +28,9 @@ class Parser
     end
   end
 
+  # All restrictions are declared in 3Dgeo2. node's name is the type of
+  # restriction. For each restriction, a method in scope is declared. These
+  # methods receive the OMS[attribute::cd='3Dgeo2'] node
   def restrict_objects
     nodes = @xml.xpath("//descendant::xmlns:OMA/xmlns:OMS[attribute::cd='3Dgeo2']")
     nodes.each do |node|

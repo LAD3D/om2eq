@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'rubygems'
+#begin
+#  require 'om2ec'
+#rescue
+  require File.join(File.dirname(__FILE__), '..', 'lib', 'om2ec.rb')
+#end
+
+opts = OptionParser.new do |opts|
+  opts.banner = "om2ec: an OpenMath to Equations translator"
+  opts.define_head "Usage: om2ec <uri|path>"
+end
+
+opts.parse!
+
+uri = ARGV.shift
+
+if uri.to_s.strip.empty?
+  puts opts
+  exit 1
+end
+
+p = Parser.new(uri).parse!
+puts p.equations
