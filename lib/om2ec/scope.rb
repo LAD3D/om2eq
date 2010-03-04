@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Scope cambio con métodos.
 
 class Scope
@@ -35,6 +36,7 @@ class Scope
   def equations
     eqs = []
     incidences.each_pair do |point, cons|
+      puts "Point #{point.x}"
       cons.each{|x| eqs << x.for(point)}
     end
     eqs

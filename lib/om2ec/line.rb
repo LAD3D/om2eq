@@ -22,7 +22,10 @@ class Line
   end
 
   def for(p)
-      "A#{p.x}+B#{p.y}+C#{p.z}+D"
+    puts "line #{first_point}, #{second_point}"
+    q, r = first_point, second_point
+    ["#{q.y}(#{p.x}-#{r.x})+#{q.x}(#{r.y}-#{p.y})",
+     "#{q.y}(#{p.z}-#{r.z})+#{q.z}(#{r.y}-#{p.y})"]
   end
 
   def inspect

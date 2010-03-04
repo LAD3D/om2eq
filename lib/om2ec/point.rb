@@ -37,7 +37,7 @@ class Point
   def inspect
     to_vector.join(',')
   end
-
+    
   include Definable
   include InScope
   
