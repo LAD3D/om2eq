@@ -49,7 +49,7 @@ describe Definable do
   it "should call completed_by when one definition gets complete" do
     @definable.should_receive(:completed_by).with(@definable.definitions[0])
     @definable.add_object Point.new
-    @definable.add_object AffinePoint.new(0,10,20)
+    @definable.add_object AffinePoint.new(["0", :x],["10", :y],["20", :z])
   end
 
   it "should add added object to dependencies if it is added" do

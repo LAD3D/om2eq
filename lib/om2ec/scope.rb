@@ -36,12 +36,20 @@ class Scope
   def equations
     eqs = []
     incidences.each_pair do |point, cons|
-      puts "Point #{point.x}"
       cons.each{|x| eqs << x.for(point)}
     end
     eqs
   end
 
+  def set_affine_coordinates(node)
+    p = self[node.next['name']]
+    coordinates = node.next.next.children[1..3].map{|n| n['dec']}
+    p.add_object [coordinates[0], :x]
+    p.add_object [coordinates[1], :y]
+    p.add_object [coordinates[2], :z]
+  end
+
+  
   protected
   def store
     @store ||= {}

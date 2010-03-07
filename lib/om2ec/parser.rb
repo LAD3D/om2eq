@@ -18,6 +18,14 @@ class Parser
     self
   end
 
+  def get_affine_coordinates()
+    nodes = @xml.xpath("//descendant::xmlns:OMA/xmlns:OMS[attribute::name='set_affine_coordinates']")
+    nodes.each do |node|
+      scope.set_affine_coordinates(node)
+    end
+  end
+
+
   # All variable names are declared after a OMS node containing
   # one type declared in 3Dgeo1. node contains the node whose name
   # attribute is the type. node.next's name attr is the variable name.
@@ -32,6 +40,7 @@ class Parser
   # restriction. For each restriction, a method in scope is declared. These
   # methods receive the OMS[attribute::cd='3Dgeo2'] node
   def restrict_objects
+    get_affine_coordinates
     nodes = @xml.xpath("//descendant::xmlns:OMA/xmlns:OMS[attribute::cd='3Dgeo2']")
     nodes.each do |node|
       scope.send node["name"].to_sym, node

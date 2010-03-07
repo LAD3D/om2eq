@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 module Definable
 
   def self.included(base)
@@ -17,7 +18,7 @@ module Definable
     if @definitions.nil? || @definitions.map{|definition| definition.add(obj)}.any?{|x| !x.nil? }
       actual_object = (obj.is_a?(Array) ? obj[0] : obj)
       object_dependencies << actual_object
-      actual_object.dependant_objects << self
+      actual_object.dependant_objects << self if actual_object.respond_to? :dependant_objects
     elsif !internal_call
       obj.add_object(self, true) if obj.respond_to?(:add_object)
     end

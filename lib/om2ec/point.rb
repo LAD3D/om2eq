@@ -42,4 +42,5 @@ class Point
   include InScope
   
   definition [Point, Point] => Midpoint
+  definition [[String, :x], [String, :y], [String, :z]] => AffinePoint
 end
