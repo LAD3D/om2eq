@@ -10,12 +10,15 @@ require 'irb'
   require File.join(File.dirname(__FILE__), '..', 'lib', 'om2ec.rb')
 #end
 
-opts = OptionParser.new do |opts|
+options = {:irb => true}
+OptionParser.new do |opts|
   opts.banner = "om2ec: an OpenMath to Equations translator"
-  opts.define_head "Usage: om2ec <uri|path>"
-end
+  opts.define_head "Usage: om2ec <uri|path> [options]"
 
-opts.parse!
+  opts.on("-i", "--[no-]irb", "Run an irb session") do |irb|
+    options[:irb] = irb
+  end
+end.parse!
 
 uri = ARGV.shift
 
@@ -25,7 +28,9 @@ if uri.to_s.strip.empty?
 end
 
 p = Parser.new(uri).parse!
-@scope = p.scope
 
-puts 'Your objects are stored in @scope'
-IRB.start
+if options[:irb]
+  @scope = p.scope
+  puts 'Your objects are stored in @scope'
+  IRB.start
+end
