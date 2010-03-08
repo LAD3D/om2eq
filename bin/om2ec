@@ -33,4 +33,6 @@ if options[:irb]
   @scope = p.scope
   puts 'Your objects are stored in @scope'
   IRB.start
+else
+  puts p.equations
 end
