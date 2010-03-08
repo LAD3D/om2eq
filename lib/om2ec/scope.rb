@@ -99,7 +99,18 @@ class Scope
   end
 
   def are_on_line(node)
+    # Create a line.
+    line = Line.new
+    line.add_object self[node.next['name']]
+    line.add_object self[node.next.next['name']]
+    line.scope = self
 
+    # The rest of the points should be incident on it.
+    cur = node.next.next.next
+    while !cur.nil?
+      (incidences[self[cur['name']]] ||= []) << line
+      cur = cur.next
+    end
   end
 
   def are_on_plane(node)

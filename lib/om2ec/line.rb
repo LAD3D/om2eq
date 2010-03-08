@@ -2,8 +2,6 @@ class Line
   include Definable
   include InScope
 
-  attr_reader :first_point, :second_point
-
   # Definitions
   definition [[Plane, :normal], Point] => NormalLine
   definition [[Line, :parallel], Point] => ParallelLine
