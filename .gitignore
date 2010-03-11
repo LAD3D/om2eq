@@ -10,6 +10,9 @@ tmtags
 \#*
 .\#*
 
+## EMACS FLY MAKE
+*_flymake.*
+
 ## VIM
 *.swp
 
