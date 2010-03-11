@@ -2,13 +2,14 @@ class Line
   include Definable
   include InScope
 
+  attr_reader :first_point, :second_point
+  
   # Definitions
   definition [[Plane, :normal], Point] => NormalLine
   definition [[Line, :parallel], Point] => ParallelLine
   definition [[Line, :perpendicular], Point] => PerpendicularLine
   definition [Point, Point] => Segment
   definition [Plane, Plane] => IntersectionLine
-
 
   # We're supposed to have two points.
   def normal_vector a_point

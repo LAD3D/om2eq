@@ -41,8 +41,11 @@ module Definable
 
   def completed_by(definition)
     unless @proper_definition
+      puts "proper_definition nil"
       @proper_definition = definition
+      puts "definition is nil: #{definition.nil?}"
       @internal_object = @proper_definition.generate
+      puts "internal_object is nil: #{@internal_object.nil?}"
     end
   end
 
