@@ -41,14 +41,11 @@ module Definable
 
   def completed_by(definition)
     unless @proper_definition
-      puts "proper_definition nil"
       @proper_definition = definition
-      puts "definition is nil: #{definition.nil?}"
       @internal_object = @proper_definition.generate
-      puts "internal_object is nil: #{@internal_object.nil?}"
     end
   end
-
+    
   module ClassMethods
 
     def definition(args)
@@ -64,7 +61,23 @@ module Definable
 
     def definitions(obj)
       @definitions ||= []
-      @definitions.dup.each {|d| d.for_object(obj)}
+      res = []
+      @definitions.each{|x| res << x.dup.for_object(obj)}
+      res
+    end
+
+    def add_internal_method(*args)
+      args.each do |m|
+        old_method = instance_method(m)
+        self.send(:define_method, m) do |*args|
+          int_obj = self.send(:instance_variable_get, :@internal_object)
+          if int_obj
+            int_obj.send(m, *args)
+          else
+            old_method.bind(self).call(*args)
+          end
+        end
+      end     
     end
   end
 end

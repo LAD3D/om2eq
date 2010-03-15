@@ -1,7 +1,7 @@
 class Line
   include Definable
   include InScope
-
+  
   attr_reader :first_point, :second_point
   
   # Definitions
@@ -11,6 +11,8 @@ class Line
   definition [Point, Point] => Segment
   definition [Plane, Plane] => IntersectionLine
 
+  add_internal_method :first_point, :second_point
+  
   # We're supposed to have two points.
   def normal_vector a_point
     i_point = IntersectionPoint.new()
@@ -21,7 +23,6 @@ class Line
   end
 
   def for(p)
-    puts "line #{first_point}, #{second_point}"
     q, r = first_point, second_point
     ["#{q.y}(#{p.x}-#{r.x})+#{q.x}(#{r.y}-#{p.y})",
      "#{q.y}(#{p.z}-#{r.z})+#{q.z}(#{r.y}-#{p.y})"]

@@ -20,6 +20,10 @@ module Definable
         @args_klazz.empty?
       end
 
+      def dup
+        Definition.new(@args_klazz.dup, @result_klazz)
+      end
+      
       def for_object(obj)
         @owner = obj
         self

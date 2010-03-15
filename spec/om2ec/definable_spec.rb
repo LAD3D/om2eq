@@ -5,8 +5,8 @@ describe Definable do
     @class = Class.new
     @class.send :include, Definable
     @class.definition [Point, Point] => Midpoint
-    @class.definition [Point, Line] => ParallelLine, :tagged_as => :parallel
-    @class.definition [Point, Line] => PerpendicularLine, :tagged_as => :perpendicular
+    @class.definition [Point, [Line, :parallel]] => ParallelLine
+    @class.definition [Point, [Line, :perpendicular]] => PerpendicularLine
     @definable = @class.new
     [@class, @definable].each do |var|
       def var.definitions
@@ -74,7 +74,7 @@ describe Definable do
 
   it "should get the proper internal object when a definition is completed" do
     @definable.add_object Class.new(Point).new
-    @definable.add_object Class.new(Line).new
+    @definable.add_object [Class.new(Line).new, :parallel]
     @definable.instance_variable_get(:@internal_object).should be_a(ParallelLine)
   end
 
