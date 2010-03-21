@@ -43,4 +43,11 @@ class Point
 
   definition [Point, Point] => Midpoint
   definition [[String, :x], [String, :y], [String, :z]] => AffinePoint
+
+  add_internal_method :x, :y, :z
+  add_internal_method :free?
+  add_internal_method :x_to, :y_to, :z_to
+  add_internal_method :to_vector, :to
+  add_internal_method :inspect
+  
 end

@@ -38,7 +38,7 @@ class Scope
     incidences.each_pair do |point, cons|
       cons.each{|x| eqs << x.for(point)}
     end
-    eqs
+    eqs.flatten
   end
 
   def set_affine_coordinates(node)
