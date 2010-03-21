@@ -40,9 +40,8 @@ class Line
 
   protected
   def eqs_for_non_free_points(p)
-    q, r = first_point, second_point
-    ["#{q.y}(#{p.x}-#{r.x})+#{q.x}(#{r.y}-#{p.y})",
-     "#{q.y}(#{p.z}-#{r.z})+#{q.z}(#{r.y}-#{p.y})"]
+    [eq_for_coordinates(p, :x, :y),
+     eq_for_coordinates(p, :z, :y)]
   end
 
   # Explanation if there are free points then they have coordinates
@@ -54,13 +53,25 @@ class Line
     uv = [:x,:y,:z] # uv stands for unused vars
     %w{x y z}.map(&:to_sym).each do |v|
       if 0 == (q.send(v).to_f - r.send(v).to_f)
-        eqs << "#{p.send(v)}-#{q.send(v)}" # <-- A bit different equation
+        eqs << p.send(v.to_s+"_to", q)  # <-- A bit different equation
         uv.delete(v)
       end
     end
-    if uv.size == 2
-      eqs << "(#{p.send(uv[1])}-#{q.send(uv[1])})(#{r.send(uv[1])}-#{q.send(uv[1])})-(#{p.send(uv[1])}-#{q.send(uv[1])})(#{r.send(uv[0])}-#{q.send(uv[0])})"
+    if uv.size == 3
+      eq_for_non_free_points(p) # The equations are the same as the
+                                # non-free-points options
+    elsif uv.size == 2
+      eqs << eq_for_coordinates(p, *uv)
     end
     eqs
+  end
+
+  # p => Point
+  # s => first coordinate (x, y or z)
+  # t => second coordinate (x, y or z)
+  def eq_for_coordinates(p, s, t)
+    q, r = first_point, second_point
+    s, t = s.to_s+"_to", t.to_s + "_to"
+    p.send(t,q)+r.send(s,q)+"-"+p.send(s,q)+r.send(t,q)
   end
 end
