@@ -1,0 +1,3 @@
+[submodule "vendor/definable"]
+	path = vendor/definable
+	url = git@github.com:LAD3D/definable.git
