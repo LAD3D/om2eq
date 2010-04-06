@@ -1,12 +1,12 @@
 require 'rubygems'
 require 'nokogiri'
+require 'definable'
+
 ROOT_DIR = File.join(File.dirname(__FILE__), 'om2ec')
 CONSTRUCTIONS_DIR = File.join(ROOT_DIR, 'constructions')
 DEFINABLE_DIR = File.join(ROOT_DIR, 'definable')
 HELPERS_DIR = File.join(ROOT_DIR, 'helpers')
 
-autoload :Constructable, File.join(ROOT_DIR, 'constructable.rb')
-autoload :Definable, File.join(ROOT_DIR, 'definable.rb')
 autoload :InScope, File.join(ROOT_DIR, 'in_scope.rb')
 autoload :Line, File.join(ROOT_DIR, 'line.rb')
 autoload :Parser, File.join(ROOT_DIR, 'parser.rb')
@@ -16,11 +16,6 @@ autoload :Scope, File.join(ROOT_DIR, 'scope.rb')
 
 require File.join(HELPERS_DIR, 'array.rb')
 autoload :NumberGenerator, File.join(HELPERS_DIR, 'number_generator.rb')
-module Definable
-  module ClassMethods
-    autoload :Definition, File.join(DEFINABLE_DIR, 'definition.rb')
-  end
-end
 
 autoload :SymbolicPoint, File.join(CONSTRUCTIONS_DIR, 'symbolic_point.rb')
 autoload :AffinePoint, File.join(CONSTRUCTIONS_DIR, 'affine_point.rb')
