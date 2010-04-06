@@ -1,11 +1,24 @@
 require 'rubygems'
 require 'nokogiri'
-require 'definable'
 
-ROOT_DIR = File.join(File.dirname(__FILE__), 'om2ec')
+
+ROOT_DIR = File.join(File.dirname(__FILE__), 'om2eq')
+VENDOR_DIR=File.join(File.dirname(__FILE__),'..','vendor')
 CONSTRUCTIONS_DIR = File.join(ROOT_DIR, 'constructions')
 DEFINABLE_DIR = File.join(ROOT_DIR, 'definable')
 HELPERS_DIR = File.join(ROOT_DIR, 'helpers')
+
+# Load definable
+DEFINABLE_LIB_DIR =File.join(VENDOR_DIR, 'definable', 'lib')
+if File.exist?(File.join(DEFINABLE_LIB_DIR, 'definable.rb'))
+  require File.join(DEFINABLE_LIB_DIR, 'definable.rb')
+else
+  begin
+    require 'definable'
+  rescue
+    puts "You really need definable installed for this to work."
+  end
+end
 
 autoload :InScope, File.join(ROOT_DIR, 'in_scope.rb')
 autoload :Line, File.join(ROOT_DIR, 'line.rb')
