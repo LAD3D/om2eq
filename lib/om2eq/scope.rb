@@ -97,7 +97,16 @@ class Scope
   end
 
   def normal(node)
+    f, s = self[node.next['name']], self[node.next.next['name']]
+    f, s = s, f unless f.is_a?(Line)
+    unless f.is_a? Line
+      raise ArgumentError("Neither #{node.next['name']} nor #{node.next.next['name']} are a line. A line and a plane are needed for normal construction")
+    end
+    unless s.is_a? Plane
+      raise ArgumentError("Neither #{node.next['name']} nor #{node.next.next['name']} are a plane. A line and a plane are needed for normal construction")
+    end
 
+    s.add_object [f, :normal]
   end
 
   def are_on_line(node)
