@@ -87,7 +87,9 @@ class Scope
   end
 
   def line_parallel(node)
-
+    l1, l2 = self[node.next['name']], self[node.next.next['name']]
+    l1.add_object [l2, :parallel]
+    l2.add_object [l1, :parallel]
   end
 
   def plane_parallel(node)

@@ -4,6 +4,16 @@ class Vector
     @first_point, @second_point =  args
   end
 
+  def apply_to(point)
+    VectorPoint.new(self, point)
+  end
+
+  %w{x y z}.each do |var|
+    define_method var do
+      "(#{@first_point.send(var)}-#{@second_point.send(var)})"
+    end
+  end
+  
   include InScope
 end
 

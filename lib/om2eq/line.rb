@@ -12,6 +12,10 @@ class Line
   definition [Plane, Plane] => IntersectionLine
 
   add_internal_method :first_point, :second_point
+
+  after_creating do |master, slave|
+    slave.scope = master.scope
+  end
   
   # We're supposed to have two points.
   def normal_vector a_point

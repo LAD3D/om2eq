@@ -48,6 +48,7 @@ autoload :Segment, File.join(CONSTRUCTIONS_DIR, 'segment.rb')
 autoload :Sphere, File.join(CONSTRUCTIONS_DIR, 'sphere.rb')
 autoload :ThreePointsPlane, File.join(CONSTRUCTIONS_DIR, 'three_points_plane.rb')
 autoload :Vector, File.join(CONSTRUCTIONS_DIR, 'vector.rb')
+autoload :VectorPoint, File.join(CONSTRUCTIONS_DIR, 'vector_point.rb')
 
 Point
 Line

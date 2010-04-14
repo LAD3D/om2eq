@@ -6,6 +6,6 @@ module InScope
 
   def scope=(scope)
     @scope = scope
-    @scope.auxiliar << self unless @scope.contains?(self)
+    @scope.auxiliar << self unless @scope.nil? || @scope.contains?(self)
   end
 end
