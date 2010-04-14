@@ -7,7 +7,7 @@ require 'irb'
 #begin
 #  require 'om2ec'
 #rescue
-  require File.join(File.dirname(__FILE__), '..', 'lib', 'om2ec.rb')
+  require File.join(File.dirname(__FILE__), '..', 'lib', 'om2eq.rb')
 #end
 
 options = {:irb => true}
