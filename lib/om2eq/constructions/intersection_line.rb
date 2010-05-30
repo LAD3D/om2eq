@@ -1,8 +1,7 @@
 class IntersectionLine
 
   def initialize(*args)
-    pl1, pl2 = retrieve_arguments(args)
-    #TODO: Work out two different points
-    # Maybe just use a special point totally determined by restrictions.
+    @pl1, @pl2 = retrieve_arguments(args)
+    # TODO work_out two points.
   end
 end
