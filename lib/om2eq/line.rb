@@ -19,7 +19,7 @@ class Line
   
   # We're supposed to have two points.
   def normal_vector a_point
-    i_point = IntersectionPoint.new()
+    i_point = Point.new()
     i_point.add_object(self)
     plane = Plane.new.add_object(a_point).add_object([self, :normal])
     i_point.add_object(plane)

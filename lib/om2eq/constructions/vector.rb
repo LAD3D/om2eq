@@ -13,6 +13,14 @@ class Vector
       "(#{@first_point.send(var)}-#{@second_point.send(var)})"
     end
   end
+
+  def cross_product(v)
+    CrossProductVector.new(self,v)
+  end
+
+  def to_a
+    @_arr ||= [x,y,z]
+  end
   
   include InScope
 end

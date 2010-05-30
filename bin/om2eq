@@ -11,7 +11,7 @@ require 'irb'
 #end
 
 options = {:irb => true}
-OptionParser.new do |opts|
+opts = OptionParser.new do |opts|
   opts.banner = "om2ec: an OpenMath to Equations translator"
   opts.define_head "Usage: om2ec <uri|path> [options]"
 

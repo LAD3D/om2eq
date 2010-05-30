@@ -48,7 +48,6 @@ class Scope
     p.add_object [coordinates[1], :y]
     p.add_object [coordinates[2], :z]
   end
-
   
   protected
   def store
@@ -125,6 +124,19 @@ class Scope
   end
 
   def are_on_plane(node)
-    
+    cur = node.next
+
+    # Create a Plane
+    plane = Plane.new
+    plane.add_object self[cur['name']]; cur = cur.next
+    plane.add_object self[cur['name']]; cur = cur.next
+    plane.add_object self[cur['name']]; cur = cur.next
+    plane.scope = self
+
+    # The rest of the points should be incident on it.
+    while !cur.nil?
+      (incidences[self[cur['name']]] ||= []) << plane
+      cur = cur.next
+    end
   end
 end
