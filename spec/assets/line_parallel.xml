@@ -39,10 +39,20 @@
       <OMV name="r"/>
       <OMA>
         <OMS cd="linalg2" name="vector"/>
-        <OMF dec="2"/>
         <OMF dec="1"/>
+        <OMF dec="0"/>
         <OMF dec="-5"/>
       </OMA>
+    </OMA>
+  </OMA>
+
+  <OMA>
+    <OMS cd="3Dgeo1" name="point"/>
+    <OMV name="s"/>
+    <OMA>
+      <OMS cd="3Dgeo2" name="incident"/>
+      <OMV name="s"/>
+      <OMV name="m"/>
     </OMA>
   </OMA>
 
