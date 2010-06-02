@@ -11,7 +11,9 @@ $path_to_om2eq = "";
 
 if($_FILES['my-oh-my']['size'] < 50000) {
   echo "<p id=\"processed_output\">";
-  exec($path_to_om2eq . " " . $_FILES['my_oh_my']['tmp_name'], $output = array());
+  exec($path_to_om2eq . " --no-irb " . $_FILES['my_oh_my']['tmp_name'], $output
+  = array());
+
   foreach($output as $line) {
     echo $line. "<br/>";
   }
