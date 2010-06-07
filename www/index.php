@@ -7,7 +7,7 @@
 <body>
   <?php
 
-$path_to_om2eq = "";
+$path_to_om2eq = "/home/jesus/investigacion/OM2ec/om2eq/bin/om2eq";
 
 if($_FILES['my-oh-my']['size'] < 50000) {
   echo "<p id=\"processed_output\">";
