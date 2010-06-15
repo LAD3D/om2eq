@@ -29,6 +29,24 @@ class Scope
     auxiliar.include?(value) || store.value?(value)
   end
 
+  def add_point_to(*objs)
+    p = PointOn.new
+    incidences[p] = []
+    objs.each do |o|
+      p.add_object o
+      incidences[p] << o
+    end
+    p
+  end
+
+  def add_restriction rest
+    restrictions << rest
+  end
+
+  def restrictions
+    @restrictions ||= []
+  end
+  
   def auxiliar
     @auxiliar ||= []
   end
@@ -38,7 +56,7 @@ class Scope
     incidences.each_pair do |point, cons|
       cons.each{|x| eqs << x.for(point)}
     end
-    eqs.flatten
+    eqs.flatten | restrictions
   end
 
   def set_affine_coordinates(node)
