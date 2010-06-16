@@ -92,11 +92,11 @@ class Scope
   end
 
   def circle_center(node)
-
+    # Not done.
   end
 
   def sphere_center(node)
-
+    
   end
 
   def perpendicular(node)
