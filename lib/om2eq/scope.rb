@@ -96,7 +96,11 @@ class Scope
   end
 
   def sphere_center(node)
-    
+    p, s = self[node.next['name']], self[node.next.next['name']]
+    p, s = s, p if p.is_a? Sphere
+    raise Error, 'I need a point' unless p.is_a? Point
+    raise Error, 'I need a sphere' unless s.is_a? Sphere
+    s.add_object [p, :center]
   end
 
   def perpendicular(node)
