@@ -54,7 +54,7 @@ class Scope
   def equations
     eqs = []
     incidences.each_pair do |point, cons|
-      cons.each{|x| eqs << x.for(point)}
+      cons.each{|x| eqs << x.for(point)} unless point.free?
     end
     eqs.flatten | restrictions
   end
