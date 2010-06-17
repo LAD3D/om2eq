@@ -48,7 +48,7 @@ class Parser
   end
 
   def equations
-    @equations ||= scope.equations.join(';')
+    @equations ||= scope.equations.join("\n")
   end
 
   def points
