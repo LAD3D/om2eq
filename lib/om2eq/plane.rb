@@ -5,7 +5,7 @@ class Plane
   attr_reader :normal_vector, :point
   
   definition [[Line, :normal], Point] => NormalPlane
-  definition [Plane, Plane] => ParallelPlane
+  definition [[Plane, :parallel], Point] => ParallelPlane
   definition [Point, Point, Point] => ThreePointsPlane
 
   add_internal_method :normal_vector, :point

@@ -54,7 +54,7 @@ class Scope
   def equations
     eqs = []
     incidences.each_pair do |point, cons|
-      cons.each{|x| eqs << x.for(point)} unless point.free?
+      cons.each{|x| eqs << x.for(point)}
     end
     eqs.flatten | restrictions
   end
@@ -98,23 +98,36 @@ class Scope
   def sphere_center(node)
     p, s = self[node.next['name']], self[node.next.next['name']]
     p, s = s, p if p.is_a? Sphere
-    raise Error, 'I need a point' unless p.is_a? Point
-    raise Error, 'I need a sphere' unless s.is_a? Sphere
+    raise ArgumentError, 'I need a point' unless p.is_a? Point
+    raise ArgumentError, 'I need a sphere' unless s.is_a? Sphere
     s.add_object [p, :center]
   end
 
   def perpendicular(node)
-
+    l1, l2 = self[node.next['name']], self[node.next.next['next']]
+    unless l1.is_a?(Line) && l2.is_a?(Line)
+      raise ArgumentError, 'I need both arguments to be a line'
+    end
+    l1.add_object [l2, :perpendicular]
+    l2.add_object [l1, :perpendicular]
   end
 
   def line_parallel(node)
     l1, l2 = self[node.next['name']], self[node.next.next['name']]
+    unless l1.is_a?(Line) && l2.is_a?(Line)
+      raise ArgumentError, 'I need both arguments to be a line'
+    end
     l1.add_object [l2, :parallel]
     l2.add_object [l1, :parallel]
   end
 
   def plane_parallel(node)
-
+    p1, p2 = self[node.next['name']], self[node.next.next['name']]
+    unless p1.is_a?(Plane) && p2.is_a?(Plane)
+      raise ArgumentError, 'I need both arguments to be a plane'
+    end
+    p1.add_object [p2, :parallel]
+    p2.add_object [p1, :parallel]
   end
 
   def normal(node)

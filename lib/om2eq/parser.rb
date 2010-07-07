@@ -47,8 +47,16 @@ class Parser
     end
   end
 
+  def separator= sep
+    @separator = sep
+  end
+
+  def separator
+    @separator || '\n'
+  end
+
   def equations
-    @equations ||= scope.equations.join("\n")
+    @equations ||= scope.equations.join(separator)
   end
 
   def points

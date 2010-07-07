@@ -18,6 +18,10 @@ opts = OptionParser.new do |opts|
   opts.on("-i", "--[no-]irb", "Run an irb session") do |irb|
     options[:irb] = irb
   end
+
+  opts.on("--separator SEPARATOR", "Uses SEPARATOR for joining the equations") do |sep|
+    options[:separator] = sep || ' '
+  end
 end.parse!
 
 uri = ARGV.shift
@@ -27,7 +31,11 @@ if uri.to_s.strip.empty?
   exit 1
 end
 
-p = Parser.new(uri).parse!
+puts "separator is #{options[:separator]}"
+
+parser = Parser.new(uri)
+parser.separator = options[:separator]
+p = parser.parse!
 
 if options[:irb]
   @scope = p.scope
