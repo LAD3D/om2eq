@@ -9,20 +9,17 @@
   <div id="page">
   <?php
 
-$path_to_om2eq = "/home/sergio/om2eq/bin/om2eq";
+     $path_to_om2eq = "/home/sergio/om2eq/bin/om2eq";
 
-if($_FILES['my-oh-my']['size'] < 50000) {
-  echo "<p id=\"processed_output\">";
-  exec($path_to_om2eq . " --no-irb " . $_FILES['my_oh_my']['tmp_name'], $output
-  = array());
+     if($_FILES['my-oh-my']['size'] < 50000) {
+        echo "<p id=\"processed_output\">";
 
-  foreach($output as $line) {
-    echo $line. "<br/>";
-  }
-  echo "</p>";
-}
+        $res = move_uploaded_file($_FILES['my-oh-my']['tmp_name'], "/home/sergio/tmp/".$_FILES['my-oh-my']['name']);
+        system("/home/sergio/om2eq/bin/om2eq --no-irb /home/sergio/tmp/" . $_FILES['my-oh-my']['name']);//, $output = array());
+        echo "</p>";
+     }
 
-?>
+   ?>
 
   <form action="" enctype="multipart/form-data" method="post">
     <input name="my-oh-my" size="75" type="file"/>

@@ -31,8 +31,6 @@ if uri.to_s.strip.empty?
   exit 1
 end
 
-puts "separator is #{options[:separator]}"
-
 parser = Parser.new(uri)
 parser.separator = options[:separator]
 p = parser.parse!
