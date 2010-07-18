@@ -15,7 +15,7 @@
         echo "<p id=\"processed_output\">";
 
         $res = move_uploaded_file($_FILES['my-oh-my']['tmp_name'], "/home/sergio/tmp/".$_FILES['my-oh-my']['name']);
-        system("/home/sergio/om2eq/bin/om2eq --no-irb /home/sergio/tmp/" . $_FILES['my-oh-my']['name']);//, $output = array());
+        system("/home/sergio/om2eq/bin/om2eq --no-irb --separator '<br>' /home/sergio/tmp/" . $_FILES['my-oh-my']['name']);//, $output = array());
         echo "</p>";
      }
 
