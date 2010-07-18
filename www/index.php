@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>om2eq</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <style type="text/css" media="screen" href="style.css"/>
 </head>
 
 <body>

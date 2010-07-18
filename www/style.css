@@ -1,0 +1,16 @@
+#page{
+   width: 750px;
+   margin: auto;
+   padding: 1px 5px 1px 5px;
+   background-color: bfdb78;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+}
+
+#processed_output {
+   margin: 10px 0px 10px 5px;
+}
+
+body{
+   background-color: 579e82;
+}
